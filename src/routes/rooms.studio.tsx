@@ -1,17 +1,22 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { RoomDetail } from "@/components/room-detail";
-import studio from "@/assets/room-studio.jpg";
 import garden from "@/assets/room-garden.jpg";
 import sea from "@/assets/room-sea.jpg";
 import breakfast from "@/assets/breakfast.jpg";
+import s1 from "@/assets/studio/SKI_6886.jpg";
+import s2 from "@/assets/studio/SKI_6887.jpg";
+import s3 from "@/assets/studio/SKI_6888.jpg";
+import s4 from "@/assets/studio/SKI_6893.jpg";
+import s5 from "@/assets/studio/SKI_6898.jpg";
+import s6 from "@/assets/studio/SKI_6899.jpg";
 
 export const Route = createFileRoute("/rooms/studio")({
   component: () => (
     <RoomDetail
       name="Studio"
       tagline="An intimate retreat for two, with a private balcony and a glimpse of the Cretan coastline."
-      hero={studio}
-      gallery={[studio, breakfast, garden, sea]}
+      hero={s1}
+      gallery={[s1, s2, s3, s4, s5, s6]}
       size="30 m²"
       capacity="2 Guests"
       view="Sea / Balcony"
