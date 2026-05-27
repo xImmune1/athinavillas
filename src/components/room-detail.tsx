@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { SiteNav } from "./site-nav";
 import { SiteFooter } from "./site-footer";
+import { RoomGallery } from "./room-gallery";
 
 export interface RoomDetailProps {
   name: string;
