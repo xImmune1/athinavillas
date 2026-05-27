@@ -104,8 +104,8 @@ function LocationPage() {
               Plaka, Lassithi 72053, Crete, Greece. Opposite Spinalonga island, on the road from Elounda toward the cape.
             </p>
             <div className="mt-10 space-y-3 text-sm">
-              <p><span className="text-[10px] uppercase tracking-[0.3em] text-accent mr-3">Email</span> stay@athinavillas.gr</p>
-              <p><span className="text-[10px] uppercase tracking-[0.3em] text-accent mr-3">Phone</span> +30 28410 00000</p>
+              <p><span className="text-[10px] uppercase tracking-[0.3em] text-accent mr-3">Email</span> athina-villas@hotmail.com</p>
+              <p><span className="text-[10px] uppercase tracking-[0.3em] text-accent mr-3">Phone</span> +30 28410 41342</p>
             </div>
             <Link to="/book" className="inline-block mt-10 bg-primary text-primary-foreground px-10 py-4 text-xs uppercase tracking-[0.3em] hover:bg-accent hover:text-accent-foreground transition">
               Reserve your stay
@@ -113,8 +113,8 @@ function LocationPage() {
           </div>
           <div className="aspect-square overflow-hidden border border-border">
             <iframe
-              title="Map of Plaka, Crete"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=25.7250%2C35.2700%2C25.7700%2C35.3000&layer=mapnik&marker=35.2850%2C25.7470"
+              title="Map of Athina Villas, Plaka, Crete"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=25.7175%2C35.2939%2C25.7375%2C35.3039&layer=mapnik&marker=35.298874%2C25.727545"
               className="w-full h-full"
               loading="lazy"
             />
