@@ -104,8 +104,8 @@ function LocationPage() {
               Plaka, Lassithi 72053, Crete, Greece. Opposite Spinalonga island, on the road from Elounda toward the cape.
             </p>
             <div className="mt-10 space-y-3 text-sm">
-              <p><span className="text-[10px] uppercase tracking-[0.3em] text-accent mr-3">Email</span> stay@athinavillas.gr</p>
-              <p><span className="text-[10px] uppercase tracking-[0.3em] text-accent mr-3">Phone</span> +30 28410 00000</p>
+              <p><span className="text-[10px] uppercase tracking-[0.3em] text-accent mr-3">Email</span> athina-villas@hotmail.com</p>
+              <p><span className="text-[10px] uppercase tracking-[0.3em] text-accent mr-3">Phone</span> +30 28410 41342</p>
             </div>
             <Link to="/book" className="inline-block mt-10 bg-primary text-primary-foreground px-10 py-4 text-xs uppercase tracking-[0.3em] hover:bg-accent hover:text-accent-foreground transition">
               Reserve your stay
