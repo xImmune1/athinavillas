@@ -9,38 +9,121 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as LocationRouteImport } from './routes/location'
+import { Route as BookRouteImport } from './routes/book'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as RoomsStudioRouteImport } from './routes/rooms.studio'
+import { Route as RoomsSeaViewRouteImport } from './routes/rooms.sea-view'
+import { Route as RoomsGardenViewRouteImport } from './routes/rooms.garden-view'
 
+const LocationRoute = LocationRouteImport.update({
+  id: '/location',
+  path: '/location',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BookRoute = BookRouteImport.update({
+  id: '/book',
+  path: '/book',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RoomsStudioRoute = RoomsStudioRouteImport.update({
+  id: '/rooms/studio',
+  path: '/rooms/studio',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RoomsSeaViewRoute = RoomsSeaViewRouteImport.update({
+  id: '/rooms/sea-view',
+  path: '/rooms/sea-view',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RoomsGardenViewRoute = RoomsGardenViewRouteImport.update({
+  id: '/rooms/garden-view',
+  path: '/rooms/garden-view',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/book': typeof BookRoute
+  '/location': typeof LocationRoute
+  '/rooms/garden-view': typeof RoomsGardenViewRoute
+  '/rooms/sea-view': typeof RoomsSeaViewRoute
+  '/rooms/studio': typeof RoomsStudioRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/book': typeof BookRoute
+  '/location': typeof LocationRoute
+  '/rooms/garden-view': typeof RoomsGardenViewRoute
+  '/rooms/sea-view': typeof RoomsSeaViewRoute
+  '/rooms/studio': typeof RoomsStudioRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/book': typeof BookRoute
+  '/location': typeof LocationRoute
+  '/rooms/garden-view': typeof RoomsGardenViewRoute
+  '/rooms/sea-view': typeof RoomsSeaViewRoute
+  '/rooms/studio': typeof RoomsStudioRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/book'
+    | '/location'
+    | '/rooms/garden-view'
+    | '/rooms/sea-view'
+    | '/rooms/studio'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/book'
+    | '/location'
+    | '/rooms/garden-view'
+    | '/rooms/sea-view'
+    | '/rooms/studio'
+  id:
+    | '__root__'
+    | '/'
+    | '/book'
+    | '/location'
+    | '/rooms/garden-view'
+    | '/rooms/sea-view'
+    | '/rooms/studio'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BookRoute: typeof BookRoute
+  LocationRoute: typeof LocationRoute
+  RoomsGardenViewRoute: typeof RoomsGardenViewRoute
+  RoomsSeaViewRoute: typeof RoomsSeaViewRoute
+  RoomsStudioRoute: typeof RoomsStudioRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/location': {
+      id: '/location'
+      path: '/location'
+      fullPath: '/location'
+      preLoaderRoute: typeof LocationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/book': {
+      id: '/book'
+      path: '/book'
+      fullPath: '/book'
+      preLoaderRoute: typeof BookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,11 +131,37 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/rooms/studio': {
+      id: '/rooms/studio'
+      path: '/rooms/studio'
+      fullPath: '/rooms/studio'
+      preLoaderRoute: typeof RoomsStudioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rooms/sea-view': {
+      id: '/rooms/sea-view'
+      path: '/rooms/sea-view'
+      fullPath: '/rooms/sea-view'
+      preLoaderRoute: typeof RoomsSeaViewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rooms/garden-view': {
+      id: '/rooms/garden-view'
+      path: '/rooms/garden-view'
+      fullPath: '/rooms/garden-view'
+      preLoaderRoute: typeof RoomsGardenViewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BookRoute: BookRoute,
+  LocationRoute: LocationRoute,
+  RoomsGardenViewRoute: RoomsGardenViewRoute,
+  RoomsSeaViewRoute: RoomsSeaViewRoute,
+  RoomsStudioRoute: RoomsStudioRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
