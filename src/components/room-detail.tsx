@@ -107,13 +107,7 @@ export function RoomDetail(p: RoomDetailProps) {
       {/* Gallery */}
       <section className="px-6 md:px-16 pb-24 md:pb-32 max-w-7xl mx-auto">
         <p className="text-xs uppercase tracking-[0.4em] text-accent mb-6">Gallery</p>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5">
-          {p.gallery.map((src, i) => (
-            <div key={i} className={`overflow-hidden ${i === 0 ? "col-span-2 row-span-2 aspect-square" : "aspect-square"}`}>
-              <img src={src} alt={`${p.name} ${i + 1}`} loading="lazy" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
-            </div>
-          ))}
-        </div>
+        <RoomGallery images={p.gallery} roomName={p.name} />
       </section>
 
       {/* Amenities */}
