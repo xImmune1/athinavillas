@@ -23,6 +23,9 @@ export const Route = createFileRoute("/")({
   }),
 });
 
+function Hero() {
+  return (
+    <section id="top" className="relative h-screen min-h-[680px] w-full overflow-hidden bg-primary">
       {/* Full-bleed hero image */}
       <img
         src={heroImg}
