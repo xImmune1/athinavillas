@@ -1,12 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
-import heroImg from "../assets/hero-plaka.jpg";
+import heroImg from "../assets/plaka.jpg";
 import studioImg from "../assets/room-studio.jpg";
 import gardenImg from "../assets/room-garden.jpg";
 import seaImg from "../assets/room-sea.jpg";
 import spinalongaImg from "../assets/spinalonga.jpg";
-import breakfastImg from "../assets/breakfast.jpg";
+import plakaImg from "../assets/plaka.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -185,7 +185,7 @@ function Location() {
     <section id="location" className="py-24 md:py-40 px-6 md:px-16 max-w-7xl mx-auto">
       <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-center">
         <div className="relative">
-          <img src={breakfastImg} alt="Greek breakfast on a sunny terrace" loading="lazy" width={1200} height={1500} className="w-full h-auto object-cover aspect-[4/5]" />
+          <img src={plakaImg} alt="Plaka village at sunset, with Elounda bay" loading="lazy" width={1200} height={1500} className="w-full h-auto object-cover aspect-[4/5]" />
           <div className="hidden md:block absolute -bottom-8 -right-8 bg-background border border-border p-8 max-w-xs">
             <p className="font-serif italic text-2xl text-primary leading-snug">
               "Breakfast tasted of figs, honey and the morning sea."
