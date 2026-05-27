@@ -22,8 +22,8 @@ export function SiteFooter() {
         </div>
         <div>
           <p className="text-[10px] uppercase tracking-[0.3em] text-accent mb-4">Contact</p>
-          <p className="text-sm opacity-80">stay@athinavillas.gr</p>
-          <p className="text-sm opacity-80 mt-1">+30 28410 00000</p>
+          <p className="text-sm opacity-80">athina-villas@hotmail.com</p>
+          <p className="text-sm opacity-80 mt-1">+30 28410 41342</p>
         </div>
         <div>
           <p className="text-[10px] uppercase tracking-[0.3em] text-accent mb-4">Visit</p>
