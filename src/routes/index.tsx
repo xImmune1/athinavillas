@@ -1,12 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
-import heroImg from "../assets/plaka.jpg";
+import heroImg from "../assets/sea/SKI_6818.jpg";
 import studioImg from "../assets/room-studio.jpg";
 import gardenImg from "../assets/room-garden.jpg";
 import seaImg from "../assets/room-sea.jpg";
 import spinalongaImg from "../assets/spinalonga.jpg";
 import plakaImg from "../assets/plaka.jpg";
+
 
 export const Route = createFileRoute("/")({
   component: Index,
