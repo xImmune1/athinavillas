@@ -22,15 +22,31 @@ export const Route = createFileRoute("/")({
   }),
 });
 
+const YT_ID = "p8WtFdTBFNg";
+
 function Hero() {
   return (
     <section id="top" className="relative h-screen min-h-[680px] w-full overflow-hidden bg-primary">
+      {/* Poster fallback while iframe loads */}
       <div
-        className="absolute inset-0 animate-kenburns"
+        className="absolute inset-0"
         style={{ backgroundImage: `url(${heroImg})`, backgroundSize: "cover", backgroundPosition: "center" }}
         aria-hidden
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" aria-hidden />
+
+      {/* YouTube background video — sized to always cover the viewport */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden>
+        <iframe
+          title="Athina Villas — Plaka, Crete"
+          src={`https://www.youtube-nocookie.com/embed/${YT_ID}?autoplay=1&mute=1&loop=1&playlist=${YT_ID}&controls=0&showinfo=0&modestbranding=1&rel=0&playsinline=1&disablekb=1&iv_load_policy=3`}
+          allow="autoplay; encrypted-media; picture-in-picture"
+          allowFullScreen
+          frameBorder={0}
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[177.78vh] min-w-full h-[56.25vw] min-h-full"
+        />
+      </div>
+
+      <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/25 to-black/65" aria-hidden />
 
       <div className="relative z-10 h-full flex flex-col justify-end px-6 md:px-16 pb-24 md:pb-32 text-[oklch(0.97_0.012_85)]">
         <p className="text-xs uppercase tracking-[0.4em] mb-6 animate-fadeup opacity-90">
