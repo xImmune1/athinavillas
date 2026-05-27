@@ -113,8 +113,8 @@ function LocationPage() {
           </div>
           <div className="aspect-square overflow-hidden border border-border">
             <iframe
-              title="Map of Plaka, Crete"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=25.7250%2C35.2700%2C25.7700%2C35.3000&layer=mapnik&marker=35.2850%2C25.7470"
+              title="Map of Athina Villas, Plaka, Crete"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=25.7175%2C35.2939%2C25.7375%2C35.3039&layer=mapnik&marker=35.298874%2C25.727545"
               className="w-full h-full"
               loading="lazy"
             />
