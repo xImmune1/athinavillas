@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as LocationRouteImport } from './routes/location'
+import { Route as FacilitiesRouteImport } from './routes/facilities'
 import { Route as BookRouteImport } from './routes/book'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as RoomsStudioRouteImport } from './routes/rooms.studio'
@@ -19,6 +20,11 @@ import { Route as RoomsGardenViewRouteImport } from './routes/rooms.garden-view'
 const LocationRoute = LocationRouteImport.update({
   id: '/location',
   path: '/location',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FacilitiesRoute = FacilitiesRouteImport.update({
+  id: '/facilities',
+  path: '/facilities',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BookRoute = BookRouteImport.update({
@@ -50,6 +56,7 @@ const RoomsGardenViewRoute = RoomsGardenViewRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/book': typeof BookRoute
+  '/facilities': typeof FacilitiesRoute
   '/location': typeof LocationRoute
   '/rooms/garden-view': typeof RoomsGardenViewRoute
   '/rooms/sea-view': typeof RoomsSeaViewRoute
@@ -58,6 +65,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/book': typeof BookRoute
+  '/facilities': typeof FacilitiesRoute
   '/location': typeof LocationRoute
   '/rooms/garden-view': typeof RoomsGardenViewRoute
   '/rooms/sea-view': typeof RoomsSeaViewRoute
@@ -67,6 +75,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/book': typeof BookRoute
+  '/facilities': typeof FacilitiesRoute
   '/location': typeof LocationRoute
   '/rooms/garden-view': typeof RoomsGardenViewRoute
   '/rooms/sea-view': typeof RoomsSeaViewRoute
@@ -77,6 +86,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/book'
+    | '/facilities'
     | '/location'
     | '/rooms/garden-view'
     | '/rooms/sea-view'
@@ -85,6 +95,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/book'
+    | '/facilities'
     | '/location'
     | '/rooms/garden-view'
     | '/rooms/sea-view'
@@ -93,6 +104,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/book'
+    | '/facilities'
     | '/location'
     | '/rooms/garden-view'
     | '/rooms/sea-view'
@@ -102,6 +114,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BookRoute: typeof BookRoute
+  FacilitiesRoute: typeof FacilitiesRoute
   LocationRoute: typeof LocationRoute
   RoomsGardenViewRoute: typeof RoomsGardenViewRoute
   RoomsSeaViewRoute: typeof RoomsSeaViewRoute
@@ -115,6 +128,13 @@ declare module '@tanstack/react-router' {
       path: '/location'
       fullPath: '/location'
       preLoaderRoute: typeof LocationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/facilities': {
+      id: '/facilities'
+      path: '/facilities'
+      fullPath: '/facilities'
+      preLoaderRoute: typeof FacilitiesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/book': {
@@ -158,6 +178,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BookRoute: BookRoute,
+  FacilitiesRoute: FacilitiesRoute,
   LocationRoute: LocationRoute,
   RoomsGardenViewRoute: RoomsGardenViewRoute,
   RoomsSeaViewRoute: RoomsSeaViewRoute,
