@@ -72,14 +72,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Athina Villas" },
+      { name: "description", content: "Villa Showcase Plus is a web application for showcasing luxury villa accommodations and amenities." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Athina Villas" },
+      { property: "og:description", content: "Villa Showcase Plus is a web application for showcasing luxury villa accommodations and amenities." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Athina Villas" },
+      { name: "twitter:description", content: "Villa Showcase Plus is a web application for showcasing luxury villa accommodations and amenities." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/bf9a08b8-ac1f-4c75-8bb2-af8a386321a4/id-preview-5ff740ab--a481f75a-4fa7-4c3a-9084-f9bd888ae6e5.lovable.app-1779901473086.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/bf9a08b8-ac1f-4c75-8bb2-af8a386321a4/id-preview-5ff740ab--a481f75a-4fa7-4c3a-9084-f9bd888ae6e5.lovable.app-1779901473086.png" },
     ],
     links: [
       {
