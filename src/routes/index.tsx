@@ -2,9 +2,9 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
 import heroImg from "../assets/sea/SKI_6818.jpg";
-import studioImg from "../assets/room-studio.jpg";
-import gardenImg from "../assets/room-garden.jpg";
-import seaImg from "../assets/room-sea.jpg";
+import studioImg from "../assets/studio/SKI_6886.jpg";
+import gardenImg from "../assets/garden/SKI_6829.jpg";
+import seaImg from "../assets/sea/SKI_6785.jpg";
 import spinalongaImg from "../assets/spinalonga.jpg";
 import plakaImg from "../assets/plaka.jpg";
 
