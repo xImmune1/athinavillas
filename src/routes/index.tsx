@@ -210,6 +210,113 @@ function Location() {
   );
 }
 
+function Reviews() {
+  const reviews = [
+    {
+      quote: "An absolute gem. Waking up to Spinalonga across the bay, then walking 100 metres to the sea — we already want to come back.",
+      name: "Sophie L.",
+      meta: "France · September 2025",
+      stars: 5,
+    },
+    {
+      quote: "Spotless apartment, the warmest hosts, and the best Cretan breakfast we had on the whole island. Plaka itself is magical.",
+      name: "James & Anna",
+      meta: "United Kingdom · July 2025",
+      stars: 5,
+    },
+    {
+      quote: "Quiet, elegant, and right in the heart of the village. The sea-view balcony at sunset is something we'll never forget.",
+      name: "Markus H.",
+      meta: "Germany · June 2025",
+      stars: 5,
+    },
+  ];
+  return (
+    <section id="reviews" className="py-24 md:py-40 px-6 md:px-16 bg-[oklch(0.97_0.012_85)]">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 md:mb-20 gap-6">
+          <div>
+            <p className="text-xs uppercase tracking-[0.4em] text-accent mb-4">Guest stories</p>
+            <h2 className="font-serif text-5xl md:text-6xl text-primary leading-[1.05]">
+              Loved by <em>travellers</em>.
+            </h2>
+          </div>
+          <p className="max-w-md text-base md:text-lg text-muted-foreground leading-relaxed">
+            A few words from the people who have already made Athina Villas their Cretan home.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-px bg-border">
+          {reviews.map((r) => (
+            <figure key={r.name} className="bg-background p-10 md:p-12 flex flex-col">
+              <div className="flex gap-1 text-accent text-lg mb-6" aria-label={`${r.stars} out of 5 stars`}>
+                {Array.from({ length: r.stars }).map((_, i) => (
+                  <span key={i}>★</span>
+                ))}
+              </div>
+              <blockquote className="font-serif text-xl md:text-2xl text-primary leading-snug italic">
+                "{r.quote}"
+              </blockquote>
+              <figcaption className="mt-8 pt-6 border-t border-border">
+                <p className="text-sm font-medium text-primary">{r.name}</p>
+                <p className="mt-1 text-[11px] uppercase tracking-[0.25em] text-muted-foreground">{r.meta}</p>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FindUs() {
+  return (
+    <section id="find-us" className="py-24 md:py-40 px-6 md:px-16 max-w-7xl mx-auto">
+      <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+        <div>
+          <p className="text-xs uppercase tracking-[0.4em] text-accent mb-6">Find us</p>
+          <h2 className="font-serif text-5xl md:text-6xl text-primary leading-[1.05]">
+            On the bay of <em>Mirabello</em>.
+          </h2>
+          <p className="mt-8 text-lg leading-relaxed text-muted-foreground max-w-md">
+            Plaka, Lassithi 72053, Crete, Greece — directly opposite Spinalonga island, 100 metres from the shore.
+          </p>
+          <div className="mt-8 space-y-2 text-sm text-muted-foreground">
+            <p>
+              <span className="text-[10px] uppercase tracking-[0.3em] text-accent mr-3">Phone</span>
+              +30 28410 41342
+            </p>
+            <p>
+              <span className="text-[10px] uppercase tracking-[0.3em] text-accent mr-3">Email</span>
+              athina-villas@hotmail.com
+            </p>
+          </div>
+          <a
+            href="https://www.facebook.com/AthinaVillasElounda/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 mt-10 bg-primary text-primary-foreground px-10 py-4 text-xs uppercase tracking-[0.3em] hover:bg-accent hover:text-accent-foreground transition"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+              <path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06C2 17.08 5.66 21.24 10.44 22v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.77-1.63 1.57v1.88h2.77l-.44 2.91h-2.33V22C18.34 21.24 22 17.08 22 12.06z"/>
+            </svg>
+            Follow us on Facebook
+          </a>
+        </div>
+        <div className="aspect-square overflow-hidden border border-border">
+          <iframe
+            title="Map of Athina Villas, Plaka, Crete"
+            src="https://www.google.com/maps?q=35.298874,25.727545&hl=en&z=15&output=embed"
+            className="w-full h-full"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function CTA() {
   return (
     <section id="book" className="relative py-32 md:py-48 px-6 md:px-16 overflow-hidden bg-primary text-[oklch(0.97_0.012_85)]">
@@ -239,6 +346,8 @@ function Index() {
       <Rooms />
       <Spinalonga />
       <Location />
+      <Reviews />
+      <FindUs />
       <CTA />
       <SiteFooter />
     </main>
