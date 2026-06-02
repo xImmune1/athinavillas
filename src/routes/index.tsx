@@ -213,21 +213,24 @@ function Location() {
 function Reviews() {
   const reviews = [
     {
-      quote: "An absolute gem. Waking up to Spinalonga across the bay, then walking 100 metres to the sea — we already want to come back.",
-      name: "Sophie L.",
-      meta: "France · September 2025",
+      quote: "This accommodation is exactly what we were looking for. Relaxing and peaceful. Perfectly located for my research as an author. Our host was welcoming, helpful and friendly. Breakfast was the best and our apartment was clean, comfortable and spacious.",
+      name: "Neelie W.",
+      meta: "Tripadvisor · May 2022",
+      title: "Great place to stay",
       stars: 5,
     },
     {
-      quote: "Spotless apartment, the warmest hosts, and the best Cretan breakfast we had on the whole island. Plaka itself is magical.",
-      name: "James & Anna",
-      meta: "United Kingdom · July 2025",
+      quote: "I stayed 3 nights at the wonderful Athina Villa's in May '21. It is a lovely accommodation with a typically Greek welcome; Kyrie Manoli was friendly, kind and really helpful. The rooms are great with sea views to Spinalonga.",
+      name: "Tripadvisor guest",
+      meta: "Tripadvisor · May 2021",
+      title: "Beautiful Plaka & Athina Villa's",
       stars: 5,
     },
     {
-      quote: "Quiet, elegant, and right in the heart of the village. The sea-view balcony at sunset is something we'll never forget.",
-      name: "Markus H.",
-      meta: "Germany · June 2025",
+      quote: "Spent four nights here with friends to celebrate my 50th birthday. We stayed in the 2-bedroom apartment — really clean and spacious, with a wonderful balcony and a sea view.",
+      name: "Tripadvisor guest",
+      meta: "Tripadvisor",
+      title: "Wonderful",
       stars: 5,
     },
   ];
@@ -248,13 +251,14 @@ function Reviews() {
 
         <div className="grid md:grid-cols-3 gap-px bg-border">
           {reviews.map((r) => (
-            <figure key={r.name} className="bg-background p-10 md:p-12 flex flex-col">
+            <figure key={r.title} className="bg-background p-10 md:p-12 flex flex-col">
               <div className="flex gap-1 text-accent text-lg mb-6" aria-label={`${r.stars} out of 5 stars`}>
                 {Array.from({ length: r.stars }).map((_, i) => (
                   <span key={i}>★</span>
                 ))}
               </div>
-              <blockquote className="font-serif text-xl md:text-2xl text-primary leading-snug italic">
+              <h3 className="font-serif text-2xl text-primary mb-4">{r.title}</h3>
+              <blockquote className="text-base md:text-lg text-muted-foreground leading-relaxed italic">
                 "{r.quote}"
               </blockquote>
               <figcaption className="mt-8 pt-6 border-t border-border">
@@ -263,6 +267,18 @@ function Reviews() {
               </figcaption>
             </figure>
           ))}
+        </div>
+
+        <div className="mt-14 md:mt-16 flex justify-center">
+          <a
+            href="https://www.tripadvisor.com/Hotel_Review-g189416-d2543474-Reviews-Athina_Villas-Elounda_Lasithi_Prefecture_Crete.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 border border-primary text-primary px-10 py-4 text-xs uppercase tracking-[0.3em] hover:bg-primary hover:text-primary-foreground transition"
+          >
+            View all reviews on Tripadvisor
+            <span aria-hidden>→</span>
+          </a>
         </div>
       </div>
     </section>
