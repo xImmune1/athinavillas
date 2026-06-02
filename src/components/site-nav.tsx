@@ -107,13 +107,12 @@ export function SiteNav({ tone = "dark" }: { tone?: Tone }) {
                   </li>
                 ))}
               </ul>
-              <Link
-                to="/book"
+              <a href="https://spinalonga.book-onlinenow.net/mobile/index.aspx?Page=0&nocountip=999.999.999.999" target="_blank" rel="noopener noreferrer"
                 onClick={() => setOpenRooms(false)}
                 className="block text-center text-[10px] uppercase tracking-[0.3em] bg-primary text-primary-foreground py-3 hover:bg-accent hover:text-accent-foreground transition"
               >
                 Reserve a room
-              </Link>
+              </a>
             </div>
           </div>
         </li>
@@ -132,8 +131,7 @@ export function SiteNav({ tone = "dark" }: { tone?: Tone }) {
         ))}
       </ul>
 
-      <Link
-        to="/book"
+      <a href="https://spinalonga.book-onlinenow.net/mobile/index.aspx?Page=0&nocountip=999.999.999.999" target="_blank" rel="noopener noreferrer"
         className={[
           "hidden md:inline-block px-5 py-2 text-[10px] uppercase tracking-[0.25em] transition border",
           solid
@@ -142,7 +140,7 @@ export function SiteNav({ tone = "dark" }: { tone?: Tone }) {
         ].join(" ")}
       >
         Reserve
-      </Link>
+      </a>
 
       {/* Mobile toggle */}
       <button
