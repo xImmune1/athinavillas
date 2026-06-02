@@ -29,6 +29,18 @@ export function SiteFooter() {
           <p className="text-[10px] uppercase tracking-[0.3em] text-accent mb-4">Visit</p>
           <Link to="/location" className="block text-sm opacity-80 hover:opacity-100">Location</Link>
           <a href="https://spinalonga.book-onlinenow.net/mobile/index.aspx?Page=0&nocountip=999.999.999.999" target="_blank" rel="noopener noreferrer" className="block text-sm opacity-80 mt-1 hover:opacity-100">Book a stay</a>
+          <a
+            href="https://www.facebook.com/AthinaVillasElounda/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Follow Athina Villas on Facebook"
+            className="group mt-5 inline-flex items-center gap-3 border border-[oklch(0.97_0.012_85/0.2)] px-4 py-2.5 text-[10px] uppercase tracking-[0.3em] opacity-90 hover:opacity-100 hover:border-accent hover:text-accent transition"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+              <path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06C2 17.08 5.66 21.24 10.44 22v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.77-1.63 1.57v1.88h2.77l-.44 2.91h-2.33V22C18.34 21.24 22 17.08 22 12.06z"/>
+            </svg>
+            Follow us
+          </a>
         </div>
       </div>
       <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-[oklch(0.97_0.012_85/0.1)] flex flex-col md:flex-row justify-between text-xs opacity-60">
