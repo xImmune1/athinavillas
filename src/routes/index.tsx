@@ -7,6 +7,11 @@ import gardenImg from "../assets/garden/SKI_6829.jpg";
 import seaImg from "../assets/sea/SKI_6785.jpg";
 import spinalongaImg from "../assets/spinalonga.jpg";
 import plakaImg from "../assets/plaka.jpg";
+import cafeFront from "@/assets/cafe/photo_2026-06-03_20-59-46.jpg.asset.json";
+import cafeTerrace from "@/assets/cafe/photo_2026-06-03_20-59-48.jpg.asset.json";
+import cafeStreet from "@/assets/cafe/photo_2026-06-03_20-59-49.jpg.asset.json";
+import cafeInside from "@/assets/cafe/photo_2026-06-03_20-59-51.jpg.asset.json";
+
 
 
 export const Route = createFileRoute("/")({
