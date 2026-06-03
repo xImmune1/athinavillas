@@ -373,7 +373,7 @@ function CafeCarousel() {
   const prev = useCallback(() => setIndex((i) => (i - 1 + images.length) % images.length), [images.length]);
 
   return (
-    <div className="relative w-full aspect-[16/10] overflow-hidden">
+    <div className="relative w-full max-w-4xl mx-auto aspect-[16/9] overflow-hidden">
       <div
         className="flex h-full transition-transform duration-700 ease-out"
         style={{ transform: `translateX(-${index * 100}%)` }}
