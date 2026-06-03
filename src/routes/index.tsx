@@ -349,7 +349,7 @@ function CTA() {
           Begin your <em>Cretan</em> story.
         </h2>
         <p className="mt-8 text-lg md:text-xl opacity-85 leading-relaxed">
-          Breakfast with a view. Evenings by the sea. Days steeped in history.
+          Breakfast at our café with a view. Evenings by the sea. Days steeped in history.
         </p>
         <a href="https://spinalonga.book-onlinenow.net/mobile/index.aspx?Page=0&nocountip=999.999.999.999" target="_blank" rel="noopener noreferrer" className="inline-block mt-12 bg-[oklch(0.97_0.012_85)] text-primary px-12 py-5 text-xs uppercase tracking-[0.3em] hover:bg-accent hover:text-primary-foreground transition">
           Book Your Stay
