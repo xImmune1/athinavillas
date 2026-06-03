@@ -360,6 +360,60 @@ function CTA() {
   );
 }
 
+function CafeCarousel() {
+  const images = [
+    { src: cafeFront.url, alt: "The Island café-snack — entrance and menu" },
+    { src: cafeTerrace.url, alt: "Shaded pergola terrace at The Island café" },
+    { src: cafeInside.url, alt: "Inside The Island café — bar and counter" },
+    { src: cafeStreet.url, alt: "Plaka street view from The Island café" },
+  ];
+  const [index, setIndex] = useState(0);
+
+  const next = useCallback(() => setIndex((i) => (i + 1) % images.length), [images.length]);
+  const prev = useCallback(() => setIndex((i) => (i - 1 + images.length) % images.length), [images.length]);
+
+  return (
+    <div className="relative w-full aspect-[16/10] overflow-hidden">
+      <div
+        className="flex h-full transition-transform duration-700 ease-out"
+        style={{ transform: `translateX(-${index * 100}%)` }}
+      >
+        {images.map((img, i) => (
+          <div key={i} className="w-full h-full flex-shrink-0">
+            <img src={img.src} alt={img.alt} loading="lazy" className="w-full h-full object-cover" />
+          </div>
+        ))}
+      </div>
+
+      <button
+        onClick={prev}
+        aria-label="Previous photo"
+        className="absolute left-4 top-1/2 -translate-y-1/2 bg-background/80 hover:bg-background text-primary w-10 h-10 flex items-center justify-center transition backdrop-blur-sm"
+      >
+        ←
+      </button>
+      <button
+        onClick={next}
+        aria-label="Next photo"
+        className="absolute right-4 top-1/2 -translate-y-1/2 bg-background/80 hover:bg-background text-primary w-10 h-10 flex items-center justify-center transition backdrop-blur-sm"
+      >
+        →
+      </button>
+
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+        {images.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setIndex(i)}
+            aria-label={`Go to photo ${i + 1}`}
+            className={`w-2 h-2 rounded-full transition ${i === index ? "bg-primary" : "bg-primary/30"}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function Cafe() {
   return (
     <section id="cafe" className="py-24 md:py-40 px-6 md:px-16 bg-[oklch(0.97_0.012_85)]">
@@ -378,20 +432,7 @@ function Cafe() {
           </div>
         </div>
 
-        <div className="grid grid-cols-12 gap-3 md:gap-4">
-          <div className="col-span-12 md:col-span-8 aspect-[4/3] overflow-hidden">
-            <img src={cafeFront.url} alt="The Island café-snack — entrance and menu" loading="lazy" className="w-full h-full object-cover" />
-          </div>
-          <div className="col-span-6 md:col-span-4 aspect-[4/3] overflow-hidden">
-            <img src={cafeTerrace.url} alt="Shaded pergola terrace at The Island café" loading="lazy" className="w-full h-full object-cover" />
-          </div>
-          <div className="col-span-6 md:col-span-4 aspect-[4/3] overflow-hidden">
-            <img src={cafeInside.url} alt="Inside The Island café — bar and counter" loading="lazy" className="w-full h-full object-cover" />
-          </div>
-          <div className="col-span-12 md:col-span-8 aspect-[4/3] overflow-hidden">
-            <img src={cafeStreet.url} alt="Plaka street view from The Island café" loading="lazy" className="w-full h-full object-cover" />
-          </div>
-        </div>
+        <CafeCarousel />
       </div>
     </section>
   );
