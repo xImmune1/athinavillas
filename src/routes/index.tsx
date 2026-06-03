@@ -94,7 +94,7 @@ function Welcome() {
         {[
           ["100m", "to the beach", "Steps from Plaka's pristine shore"],
           ["Spinalonga", "in full view", "The legendary island, right across the bay"],
-          ["Free Wi-Fi", "& breakfast", "Continental or full English, daily"],
+          ["Free Wi-Fi", "& café breakfast", "Delicious breakfast served at our café, The Island"],
         ].map(([a, b, c]) => (
           <div key={a} className="bg-background p-10 md:p-12">
             <p className="font-serif text-3xl md:text-4xl text-primary">
