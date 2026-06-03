@@ -182,10 +182,11 @@ function Location() {
           <img src={plakaImg} alt="Plaka village at sunset, with Elounda bay" loading="lazy" width={1200} height={1500} className="w-full h-auto object-cover aspect-[4/5]" />
           <div className="hidden md:block absolute -bottom-8 -right-8 bg-background border border-border p-8 max-w-xs">
             <p className="font-serif italic text-2xl text-primary leading-snug">
-              "Breakfast tasted of figs, honey and the morning sea."
+              "Breakfast at their café tasted of figs, honey and the morning sea."
             </p>
             <p className="mt-3 text-xs uppercase tracking-[0.25em] text-muted-foreground">— Guest, August 2025</p>
           </div>
+
         </div>
 
         <div>
