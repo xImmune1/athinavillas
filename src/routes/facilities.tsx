@@ -60,7 +60,7 @@ const groups = [
   {
     title: "Services & extras",
     items: [
-      "Daily breakfast — continental or full English",
+      "Delicious breakfast served at our café, The Island",
       "Free Wi-Fi throughout",
       "Free public parking nearby",
       "Concierge for Spinalonga boat tickets",
