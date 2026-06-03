@@ -359,6 +359,43 @@ function CTA() {
   );
 }
 
+function Cafe() {
+  return (
+    <section id="cafe" className="py-24 md:py-40 px-6 md:px-16 bg-[oklch(0.97_0.012_85)]">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-12 gap-12 md:gap-16 items-end mb-16 md:mb-20">
+          <div className="md:col-span-6">
+            <p className="text-xs uppercase tracking-[0.4em] text-accent mb-6">Our café</p>
+            <h2 className="font-serif text-5xl md:text-6xl text-primary leading-[1.05]">
+              Delicious breakfast at <em>The Island</em>.
+            </h2>
+          </div>
+          <div className="md:col-span-6">
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+              Mornings begin a few steps away at our own café-snack, <em>The Island</em> — where breakfast is served fresh each day under the pergola: omelettes, puff pastry pies, club sandwiches, freshly squeezed juices, smoothies, and proper Greek coffee. Stay for lunch, an afternoon ice cream, or a sunset drink.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-12 gap-3 md:gap-4">
+          <div className="col-span-12 md:col-span-8 aspect-[4/3] overflow-hidden">
+            <img src={cafeFront.url} alt="The Island café-snack — entrance and menu" loading="lazy" className="w-full h-full object-cover" />
+          </div>
+          <div className="col-span-6 md:col-span-4 aspect-[4/3] overflow-hidden">
+            <img src={cafeTerrace.url} alt="Shaded pergola terrace at The Island café" loading="lazy" className="w-full h-full object-cover" />
+          </div>
+          <div className="col-span-6 md:col-span-4 aspect-[4/3] overflow-hidden">
+            <img src={cafeInside.url} alt="Inside The Island café — bar and counter" loading="lazy" className="w-full h-full object-cover" />
+          </div>
+          <div className="col-span-12 md:col-span-8 aspect-[4/3] overflow-hidden">
+            <img src={cafeStreet.url} alt="Plaka street view from The Island café" loading="lazy" className="w-full h-full object-cover" />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Index() {
   return (
     <main className="bg-background">
@@ -367,6 +404,7 @@ function Index() {
       <Welcome />
       <Rooms />
       <Spinalonga />
+      <Cafe />
       <Location />
       <Reviews />
       <FindUs />
@@ -375,3 +413,4 @@ function Index() {
     </main>
   );
 }
+
