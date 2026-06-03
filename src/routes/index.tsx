@@ -7,6 +7,11 @@ import gardenImg from "../assets/garden/SKI_6829.jpg";
 import seaImg from "../assets/sea/SKI_6785.jpg";
 import spinalongaImg from "../assets/spinalonga.jpg";
 import plakaImg from "../assets/plaka.jpg";
+import cafeFront from "@/assets/cafe/photo_2026-06-03_20-59-46.jpg.asset.json";
+import cafeTerrace from "@/assets/cafe/photo_2026-06-03_20-59-48.jpg.asset.json";
+import cafeStreet from "@/assets/cafe/photo_2026-06-03_20-59-49.jpg.asset.json";
+import cafeInside from "@/assets/cafe/photo_2026-06-03_20-59-51.jpg.asset.json";
+
 
 
 export const Route = createFileRoute("/")({
@@ -89,7 +94,7 @@ function Welcome() {
         {[
           ["100m", "to the beach", "Steps from Plaka's pristine shore"],
           ["Spinalonga", "in full view", "The legendary island, right across the bay"],
-          ["Free Wi-Fi", "& breakfast", "Continental or full English, daily"],
+          ["Free Wi-Fi", "& café breakfast", "Delicious breakfast served at our café, The Island"],
         ].map(([a, b, c]) => (
           <div key={a} className="bg-background p-10 md:p-12">
             <p className="font-serif text-3xl md:text-4xl text-primary">
@@ -177,10 +182,11 @@ function Location() {
           <img src={plakaImg} alt="Plaka village at sunset, with Elounda bay" loading="lazy" width={1200} height={1500} className="w-full h-auto object-cover aspect-[4/5]" />
           <div className="hidden md:block absolute -bottom-8 -right-8 bg-background border border-border p-8 max-w-xs">
             <p className="font-serif italic text-2xl text-primary leading-snug">
-              "Breakfast tasted of figs, honey and the morning sea."
+              "Breakfast at their café tasted of figs, honey and the morning sea."
             </p>
             <p className="mt-3 text-xs uppercase tracking-[0.25em] text-muted-foreground">— Guest, August 2025</p>
           </div>
+
         </div>
 
         <div>
@@ -343,11 +349,48 @@ function CTA() {
           Begin your <em>Cretan</em> story.
         </h2>
         <p className="mt-8 text-lg md:text-xl opacity-85 leading-relaxed">
-          Breakfast with a view. Evenings by the sea. Days steeped in history.
+          Breakfast at our café with a view. Evenings by the sea. Days steeped in history.
         </p>
         <a href="https://spinalonga.book-onlinenow.net/mobile/index.aspx?Page=0&nocountip=999.999.999.999" target="_blank" rel="noopener noreferrer" className="inline-block mt-12 bg-[oklch(0.97_0.012_85)] text-primary px-12 py-5 text-xs uppercase tracking-[0.3em] hover:bg-accent hover:text-primary-foreground transition">
           Book Your Stay
         </a>
+      </div>
+    </section>
+  );
+}
+
+function Cafe() {
+  return (
+    <section id="cafe" className="py-24 md:py-40 px-6 md:px-16 bg-[oklch(0.97_0.012_85)]">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-12 gap-12 md:gap-16 items-end mb-16 md:mb-20">
+          <div className="md:col-span-6">
+            <p className="text-xs uppercase tracking-[0.4em] text-accent mb-6">Our café</p>
+            <h2 className="font-serif text-5xl md:text-6xl text-primary leading-[1.05]">
+              Delicious breakfast at <em>The Island</em>.
+            </h2>
+          </div>
+          <div className="md:col-span-6">
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+              Mornings begin a few steps away at our own café-snack, <em>The Island</em> — where breakfast is served fresh each day under the pergola: omelettes, puff pastry pies, club sandwiches, freshly squeezed juices, smoothies, and proper Greek coffee. Stay for lunch, an afternoon ice cream, or a sunset drink.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-12 gap-3 md:gap-4">
+          <div className="col-span-12 md:col-span-8 aspect-[4/3] overflow-hidden">
+            <img src={cafeFront.url} alt="The Island café-snack — entrance and menu" loading="lazy" className="w-full h-full object-cover" />
+          </div>
+          <div className="col-span-6 md:col-span-4 aspect-[4/3] overflow-hidden">
+            <img src={cafeTerrace.url} alt="Shaded pergola terrace at The Island café" loading="lazy" className="w-full h-full object-cover" />
+          </div>
+          <div className="col-span-6 md:col-span-4 aspect-[4/3] overflow-hidden">
+            <img src={cafeInside.url} alt="Inside The Island café — bar and counter" loading="lazy" className="w-full h-full object-cover" />
+          </div>
+          <div className="col-span-12 md:col-span-8 aspect-[4/3] overflow-hidden">
+            <img src={cafeStreet.url} alt="Plaka street view from The Island café" loading="lazy" className="w-full h-full object-cover" />
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -361,6 +404,7 @@ function Index() {
       <Welcome />
       <Rooms />
       <Spinalonga />
+      <Cafe />
       <Location />
       <Reviews />
       <FindUs />
@@ -369,3 +413,4 @@ function Index() {
     </main>
   );
 }
+
