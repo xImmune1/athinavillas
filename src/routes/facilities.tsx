@@ -73,7 +73,7 @@ const groups = [
 ];
 
 const highlights = [
-  { tag: "Breakfast", title: "Figs, honey & the morning sea.", body: "Continental spreads or a full English — served daily, with the catch of the day available on request.", img: breakfast },
+  { tag: "Breakfast at our café", title: "Figs, honey & the morning sea.", body: "Breakfast is served fresh each morning at our own café-snack, The Island — omelettes, puff pastry pies, juices and proper Greek coffee, just steps from your door.", img: breakfast },
   { tag: "The view", title: "Spinalonga, front row.", body: "Sea-view apartments open onto an unbroken panorama of the Cretan Sea and Spinalonga island.", img: sea },
   { tag: "The garden", title: "Lemon, olive & bougainvillea.", body: "Mature Mediterranean gardens surround the villa — quiet corners to read, sketch, or simply sit.", img: garden },
 ];
