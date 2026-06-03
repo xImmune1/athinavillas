@@ -125,7 +125,7 @@ function LocationPage() {
       {/* Inspiration strip */}
       <section className="grid md:grid-cols-2">
         <div className="aspect-[4/3] md:aspect-auto md:h-[60vh] overflow-hidden">
-          <img src={breakfast} alt="Cretan breakfast on a sunny terrace" className="w-full h-full object-cover" />
+          <img src={breakfast} alt="Cretan breakfast served at our café, The Island" className="w-full h-full object-cover" />
         </div>
         <div className="aspect-[4/3] md:aspect-auto md:h-[60vh] overflow-hidden">
           <img src={sea} alt="Sea view from Athina Villas" className="w-full h-full object-cover" />
