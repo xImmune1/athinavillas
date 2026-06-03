@@ -10,7 +10,7 @@ export const Route = createFileRoute("/facilities")({
   head: () => ({
     meta: [
       { title: "Facilities · Athina Villas — Plaka, Crete" },
-      { name: "description", content: "Everything we offer at Athina Villas: kitchenettes, daily breakfast, free Wi-Fi & parking, air conditioning, and concierge for Spinalonga." },
+      { name: "description", content: "Everything we offer at Athina Villas: kitchenettes, delicious breakfast at our café The Island, free Wi-Fi & parking, air conditioning, and concierge for Spinalonga." },
     ],
   }),
 });
