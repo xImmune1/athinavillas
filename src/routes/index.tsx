@@ -55,7 +55,7 @@ function Hero() {
           quiet luxury, just one hundred metres from the shore.
         </p>
         <div className="mt-10 flex flex-wrap gap-4 animate-fadeup delay-600">
-          <a href="https://spinalonga.book-onlinenow.net/mobile/index.aspx?Page=0&nocountip=999.999.999.999" target="_blank" rel="noopener noreferrer" className="bg-[oklch(0.97_0.012_85)] text-primary px-8 py-4 text-xs uppercase tracking-[0.25em] hover:bg-accent hover:text-primary-foreground transition">
+          <a href="https://spinalonga.book-onlinenow.net/" target="_blank" rel="noopener noreferrer" className="bg-[oklch(0.97_0.012_85)] text-primary px-8 py-4 text-xs uppercase tracking-[0.25em] hover:bg-accent hover:text-primary-foreground transition">
             Book Your Stay
           </a>
           <a href="#rooms" className="border border-[oklch(0.97_0.012_85/0.7)] px-8 py-4 text-xs uppercase tracking-[0.25em] hover:bg-[oklch(0.97_0.012_85/0.1)] transition">
@@ -352,7 +352,7 @@ function CTA() {
         <p className="mt-8 text-lg md:text-xl opacity-85 leading-relaxed">
           Breakfast at our café with a view. Evenings by the sea. Days steeped in history.
         </p>
-        <a href="https://spinalonga.book-onlinenow.net/mobile/index.aspx?Page=0&nocountip=999.999.999.999" target="_blank" rel="noopener noreferrer" className="inline-block mt-12 bg-[oklch(0.97_0.012_85)] text-primary px-12 py-5 text-xs uppercase tracking-[0.3em] hover:bg-accent hover:text-primary-foreground transition">
+        <a href="https://spinalonga.book-onlinenow.net/" target="_blank" rel="noopener noreferrer" className="inline-block mt-12 bg-[oklch(0.97_0.012_85)] text-primary px-12 py-5 text-xs uppercase tracking-[0.3em] hover:bg-accent hover:text-primary-foreground transition">
           Book Your Stay
         </a>
       </div>

@@ -90,7 +90,7 @@ export function RoomDetail(p: RoomDetailProps) {
               <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
                 Submit your dates and we'll confirm availability within 24 hours.
               </p>
-              <a href="https://spinalonga.book-onlinenow.net/mobile/index.aspx?Page=0&nocountip=999.999.999.999" target="_blank" rel="noopener noreferrer"
+              <a href="https://spinalonga.book-onlinenow.net/" target="_blank" rel="noopener noreferrer"
                 className="mt-6 block text-center bg-primary text-primary-foreground px-8 py-4 text-xs uppercase tracking-[0.3em] hover:bg-accent hover:text-accent-foreground transition"
               >
                 Book this room
@@ -128,7 +128,7 @@ export function RoomDetail(p: RoomDetailProps) {
       <section className="py-24 md:py-32 px-6 md:px-16 max-w-7xl mx-auto">
         <div className="flex items-end justify-between mb-12">
           <h2 className="font-serif text-4xl md:text-5xl text-primary">Other retreats</h2>
-          <a href="https://spinalonga.book-onlinenow.net/mobile/index.aspx?Page=0&nocountip=999.999.999.999" target="_blank" rel="noopener noreferrer" className="hidden md:inline text-xs uppercase tracking-[0.3em] text-accent border-b border-accent pb-1">
+          <a href="https://spinalonga.book-onlinenow.net/" target="_blank" rel="noopener noreferrer" className="hidden md:inline text-xs uppercase tracking-[0.3em] text-accent border-b border-accent pb-1">
             Book now →
           </a>
         </div>
