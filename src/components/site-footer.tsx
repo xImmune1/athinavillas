@@ -28,7 +28,7 @@ export function SiteFooter() {
         <div>
           <p className="text-[10px] uppercase tracking-[0.3em] text-accent mb-4">Visit</p>
           <Link to="/location" className="block text-sm opacity-80 hover:opacity-100">Location</Link>
-          <a href="https://spinalonga.book-onlinenow.net/mobile/index.aspx?Page=0&nocountip=999.999.999.999" target="_blank" rel="noopener noreferrer" className="block text-sm opacity-80 mt-1 hover:opacity-100">Book a stay</a>
+          <a href="https://spinalonga.book-onlinenow.net/" target="_blank" rel="noopener noreferrer" className="block text-sm opacity-80 mt-1 hover:opacity-100">Book a stay</a>
           <a
             href="https://www.facebook.com/AthinaVillasElounda/"
             target="_blank"

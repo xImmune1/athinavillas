@@ -107,7 +107,7 @@ export function SiteNav({ tone = "dark" }: { tone?: Tone }) {
                   </li>
                 ))}
               </ul>
-              <a href="https://spinalonga.book-onlinenow.net/mobile/index.aspx?Page=0&nocountip=999.999.999.999" target="_blank" rel="noopener noreferrer"
+              <a href="https://spinalonga.book-onlinenow.net/" target="_blank" rel="noopener noreferrer"
                 onClick={() => setOpenRooms(false)}
                 className="block text-center text-[10px] uppercase tracking-[0.3em] bg-primary text-primary-foreground py-3 hover:bg-accent hover:text-accent-foreground transition"
               >
@@ -131,7 +131,7 @@ export function SiteNav({ tone = "dark" }: { tone?: Tone }) {
         ))}
       </ul>
 
-      <a href="https://spinalonga.book-onlinenow.net/mobile/index.aspx?Page=0&nocountip=999.999.999.999" target="_blank" rel="noopener noreferrer"
+      <a href="https://spinalonga.book-onlinenow.net/" target="_blank" rel="noopener noreferrer"
         className={[
           "hidden md:inline-block px-5 py-2 text-[10px] uppercase tracking-[0.25em] transition border",
           solid

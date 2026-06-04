@@ -182,7 +182,7 @@ function FacilitiesPage() {
           <Link to="/rooms/sea-view" className="border border-[oklch(0.97_0.012_85/0.6)] px-10 py-4 text-xs uppercase tracking-[0.3em] hover:bg-[oklch(0.97_0.012_85/0.1)] transition">
             Browse rooms
           </Link>
-          <a href="https://spinalonga.book-onlinenow.net/mobile/index.aspx?Page=0&nocountip=999.999.999.999" target="_blank" rel="noopener noreferrer" className="bg-[oklch(0.97_0.012_85)] text-primary px-10 py-4 text-xs uppercase tracking-[0.3em] hover:bg-accent hover:text-accent-foreground transition">
+          <a href="https://spinalonga.book-onlinenow.net/" target="_blank" rel="noopener noreferrer" className="bg-[oklch(0.97_0.012_85)] text-primary px-10 py-4 text-xs uppercase tracking-[0.3em] hover:bg-accent hover:text-accent-foreground transition">
             Book your stay
           </a>
         </div>
