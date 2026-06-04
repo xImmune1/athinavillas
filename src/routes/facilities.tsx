@@ -1,9 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
-import breakfast from "@/assets/breakfast.jpg";
-import sea from "@/assets/room-sea.jpg";
-import garden from "@/assets/room-garden.jpg";
+import cafeFront from "@/assets/cafe/photo_2026-06-03_20-59-46.jpg.asset.json";
+import seaImg from "@/assets/sea/SKI_6785.jpg";
+import gardenImg from "@/assets/garden/SKI_6829.jpg";
 
 export const Route = createFileRoute("/facilities")({
   component: FacilitiesPage,
