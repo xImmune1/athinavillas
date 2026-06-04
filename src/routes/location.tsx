@@ -2,8 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
 import spinalonga from "@/assets/spinalonga.jpg";
-import breakfast from "@/assets/breakfast.jpg";
-import sea from "@/assets/room-sea.jpg";
+import cafePhoto from "@/assets/cafe/photo_2026-06-03_20-59-48.jpg.asset.json";
+import sea from "@/assets/sea/SKI_6788.jpg";
 
 export const Route = createFileRoute("/location")({
   component: LocationPage,
