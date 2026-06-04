@@ -74,7 +74,7 @@ const groups = [
 
 const highlights = [
   { tag: "Breakfast at our café", title: "Breakfast at The Island.", body: "Each morning, breakfast is served at our own café-snack The Island — omelettes, puff pastry pies, fresh juices and proper Greek coffee, just steps from your apartment.", img: cafeFront.url },
-  { tag: "The view", title: "Spinalonga, front row.", body: "Sea-view apartments open onto an unbroken panorama of the Cretan Sea and Spinalonga island.", img: seaImg },
+  { tag: "The view", title: "Spinalonga, front row.", body: "Sea-view apartments open onto an unbroken panorama of the Cretan Sea and Spinalonga island.", img: spinalongaImg },
   { tag: "The garden", title: "Lemon, olive & bougainvillea.", body: "Mature Mediterranean gardens surround the villa — quiet corners to read, sketch, or simply sit.", img: gardenImg },
 ];
 
