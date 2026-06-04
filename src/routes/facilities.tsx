@@ -1,9 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
-import breakfast from "@/assets/breakfast.jpg";
-import sea from "@/assets/room-sea.jpg";
-import garden from "@/assets/room-garden.jpg";
+import cafeFront from "@/assets/cafe/photo_2026-06-03_20-59-46.jpg.asset.json";
+import seaImg from "@/assets/sea/SKI_6785.jpg";
+import gardenImg from "@/assets/garden/SKI_6829.jpg";
 
 export const Route = createFileRoute("/facilities")({
   component: FacilitiesPage,
@@ -73,9 +73,9 @@ const groups = [
 ];
 
 const highlights = [
-  { tag: "Breakfast at our café", title: "Figs, honey & the morning sea.", body: "Breakfast is served fresh each morning at our own café-snack, The Island — omelettes, puff pastry pies, juices and proper Greek coffee, just steps from your door.", img: breakfast },
-  { tag: "The view", title: "Spinalonga, front row.", body: "Sea-view apartments open onto an unbroken panorama of the Cretan Sea and Spinalonga island.", img: sea },
-  { tag: "The garden", title: "Lemon, olive & bougainvillea.", body: "Mature Mediterranean gardens surround the villa — quiet corners to read, sketch, or simply sit.", img: garden },
+  { tag: "Breakfast at our café", title: "Breakfast at The Island.", body: "Each morning, breakfast is served at our own café-snack The Island — omelettes, puff pastry pies, fresh juices and proper Greek coffee, just steps from your apartment.", img: cafeFront.url },
+  { tag: "The view", title: "Spinalonga, front row.", body: "Sea-view apartments open onto an unbroken panorama of the Cretan Sea and Spinalonga island.", img: seaImg },
+  { tag: "The garden", title: "Lemon, olive & bougainvillea.", body: "Mature Mediterranean gardens surround the villa — quiet corners to read, sketch, or simply sit.", img: gardenImg },
 ];
 
 function FacilitiesPage() {
