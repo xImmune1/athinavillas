@@ -339,7 +339,8 @@ function CTA() {
 
 function CafeCarousel() {
   const images = [
-    { src: cafeFront.url, alt: "The Island café-snack — entrance and menu" },
+    { src: cafeFront.url, alt: "The Island café-snack — full view of the building and terrace" },
+    { src: cafeBreakfast.url, alt: "Traditional Cretan breakfast platter with cheese, olives, tomato, cucumber and rusks" },
     { src: cafeTerrace.url, alt: "Shaded pergola terrace at The Island café" },
     { src: cafeInside.url, alt: "Inside The Island café — bar and counter" },
     { src: cafeStreet.url, alt: "Plaka street view from The Island café" },
