@@ -135,40 +135,7 @@ function LocationPage() {
             </p>
           </div>
         </div>
-        <div className="relative overflow-hidden border border-border bg-black">
-          <div className="relative aspect-video w-full">
-            <iframe
-              src="https://embed.skylinewebcams.com/livecam/1488294709.html"
-              title="Live webcam of Spinalonga — Lasithi, Crete"
-              allow="autoplay; fullscreen"
-              allowFullScreen
-              loading="lazy"
-              className="absolute inset-0 w-full h-full border-0"
-            />
-          </div>
-          <div className="pointer-events-none absolute top-4 left-4 z-10">
-            <span className="inline-flex items-center gap-2 bg-black/60 backdrop-blur-sm px-3 py-1.5 text-[oklch(0.97_0.012_85)] text-xs uppercase tracking-[0.3em]">
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500" />
-              </span>
-              {t("liveCam.label")}
-            </span>
-          </div>
-          <div className="flex items-center justify-between gap-4 px-5 py-4 bg-background border-t border-border">
-            <p className="text-xs text-muted-foreground">
-              Live stream by SkylineWebcams
-            </p>
-            <a
-              href="https://www.skylinewebcams.com/en/webcam/ellada/crete/lasithi/spinalonga.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs uppercase tracking-[0.3em] text-primary hover:text-accent transition-colors"
-            >
-              {t("liveCam.cta")} →
-            </a>
-          </div>
-        </div>
+        <LiveCamEmbed cta={t("liveCam.cta")} label={t("liveCam.label")} />
       </section>
 
       {/* Inspiration strip */}
@@ -178,6 +145,7 @@ function LocationPage() {
         </div>
         <div className="aspect-[4/3] md:aspect-auto md:h-[60vh] overflow-hidden">
           <img src={sea} alt="Sea view from Athina Villas" className="w-full h-full object-cover" />
+
         </div>
       </section>
 
