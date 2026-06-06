@@ -4,7 +4,7 @@ import { SiteFooter } from "@/components/site-footer";
 import spinalonga from "@/assets/spinalonga.jpg";
 import cafePhoto from "@/assets/cafe/photo_2026-06-03_20-59-48.jpg.asset.json";
 import sea from "@/assets/sea/SKI_6788.jpg";
-import { useT, THtml, type dict as DictT } from "@/lib/i18n";
+import { useT, THtml, type DictKey } from "@/lib/i18n";
 
 export const Route = createFileRoute("/location")({
   component: LocationPage,
@@ -16,7 +16,7 @@ export const Route = createFileRoute("/location")({
   }),
 });
 
-type K = keyof typeof DictT;
+type K = DictKey;
 const reasons: [K, K][] = [
   ["locp.r1.t","locp.r1.d"],
   ["locp.r2.t","locp.r2.d"],

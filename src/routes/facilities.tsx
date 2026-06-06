@@ -4,7 +4,7 @@ import { SiteFooter } from "@/components/site-footer";
 import cafeFront from "@/assets/cafe/photo_2026-06-03_20-59-46.jpg.asset.json";
 import spinalongaImg from "@/assets/spinalonga.jpg";
 import gardenImg from "@/assets/garden/SKI_6829.jpg";
-import { useT, THtml, type dict as DictT } from "@/lib/i18n";
+import { useT, THtml, type DictKey } from "@/lib/i18n";
 
 export const Route = createFileRoute("/facilities")({
   component: FacilitiesPage,
@@ -16,7 +16,7 @@ export const Route = createFileRoute("/facilities")({
   }),
 });
 
-type K = keyof typeof DictT;
+type K = DictKey;
 
 const groups: { title: K; items: K[] }[] = [
   {
