@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
-import cafeFront from "@/assets/cafe/photo_2026-06-03_20-59-46.jpg.asset.json";
+import cafeFront from "@/assets/cafe/cafe-wide.jpg.asset.json";
+import cafeBreakfast from "@/assets/cafe/breakfast-platter.jpg.asset.json";
 import spinalongaImg from "@/assets/spinalonga.jpg";
 import gardenImg from "@/assets/garden/SKI_6829.jpg";
 import { useT, THtml, type DictKey } from "@/lib/i18n";
