@@ -211,9 +211,9 @@ function Location() {
 function Reviews() {
   const { t } = useT();
   const reviews = [
-    { quote: t("rev.q1"), name: t("rev.n1"), meta: t("rev.m1"), title: t("rev.t1"), stars: 5 },
-    { quote: t("rev.q2"), name: t("rev.guest"), meta: t("rev.m2"), title: t("rev.t2"), stars: 5 },
-    { quote: t("rev.q3"), name: t("rev.guest"), meta: t("rev.m3"), title: t("rev.t3"), stars: 5 },
+    { quote: t("rev.q1"), name: t("rev.n1"), title: t("rev.t1"), stars: 5 },
+    { quote: t("rev.q2"), name: t("rev.guest"), title: t("rev.t2"), stars: 5 },
+    { quote: t("rev.q3"), name: t("rev.guest"), title: t("rev.t3"), stars: 5 },
   ];
   return (
     <section id="reviews" className="py-24 md:py-40 px-6 md:px-16 bg-[oklch(0.97_0.012_85)]">
@@ -240,20 +240,28 @@ function Reviews() {
               </blockquote>
               <figcaption className="mt-8 pt-6 border-t border-border">
                 <p className="text-sm font-medium text-primary">{r.name}</p>
-                <p className="mt-1 text-[11px] uppercase tracking-[0.25em] text-muted-foreground">{r.meta}</p>
               </figcaption>
             </figure>
           ))}
         </div>
 
-        <div className="mt-14 md:mt-16 flex justify-center">
+        <div className="mt-14 md:mt-16 flex flex-col sm:flex-row justify-center gap-4">
           <a
             href="https://www.tripadvisor.com/Hotel_Review-g189416-d2543474-Reviews-Athina_Villas-Elounda_Lasithi_Prefecture_Crete.html"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 border border-primary text-primary px-10 py-4 text-xs uppercase tracking-[0.3em] hover:bg-primary hover:text-primary-foreground transition"
+            className="inline-flex items-center justify-center gap-3 border border-primary text-primary px-10 py-4 text-xs uppercase tracking-[0.3em] hover:bg-primary hover:text-primary-foreground transition"
           >
             {t("rev.viewAll")}
+            <span aria-hidden>→</span>
+          </a>
+          <a
+            href="https://www.tripadvisor.com/Hotel_Review-g189416-d2543474-Reviews-Athina_Villas-Elounda_Lasithi_Prefecture_Crete.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-10 py-4 text-xs uppercase tracking-[0.3em] hover:bg-accent hover:text-accent-foreground transition"
+          >
+            {t("rev.followTa")}
             <span aria-hidden>→</span>
           </a>
         </div>
