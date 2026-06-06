@@ -46,7 +46,7 @@ function FacilitiesPage() {
   const { t } = useT();
 
   const highlights = [
-    { tag: t("fac.hl1.tag"), title: t("fac.hl1.title"), body: t("fac.hl1.body"), img: cafeFront.url },
+    { tag: t("fac.hl1.tag"), title: t("fac.hl1.title"), body: t("fac.hl1.body"), img: cafeBreakfast.url },
     { tag: t("fac.hl2.tag"), title: t("fac.hl2.title"), body: t("fac.hl2.body"), img: spinalongaImg },
     { tag: t("fac.hl3.tag"), title: t("fac.hl3.title"), body: t("fac.hl3.body"), img: gardenImg },
   ];
