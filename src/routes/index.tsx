@@ -203,6 +203,18 @@ function Location() {
           <Link to="/location" className="inline-block mt-12 text-sm uppercase tracking-[0.3em] text-primary border-b border-accent pb-1 hover:text-accent transition">
             {t("loc.discover")}
           </Link>
+          <a
+            href="https://www.skylinewebcams.com/en/webcam/ellada/crete/lasithi/spinalonga.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 ml-6 mt-12 text-sm uppercase tracking-[0.3em] text-primary hover:text-accent transition"
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500" />
+            </span>
+            {t("home.liveCam")}
+          </a>
         </div>
       </div>
     </section>
