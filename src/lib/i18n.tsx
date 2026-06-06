@@ -131,6 +131,7 @@ export const dict: Dict = {
   "rev.m3": { en: "Tripadvisor", el: "Tripadvisor" },
 
   "rev.viewAll": { en: "View all reviews on Tripadvisor", el: "Δείτε όλες τις κριτικές στο Tripadvisor" },
+  "rev.followTa": { en: "Follow us on Tripadvisor", el: "Ακολουθήστε μας στο Tripadvisor" },
 
   // ---------- Find us ----------
   "find.kicker": { en: "Find us", el: "Πού θα μας βρείτε" },
