@@ -135,29 +135,40 @@ function LocationPage() {
             </p>
           </div>
         </div>
-        <a
-          href="https://www.skylinewebcams.com/en/webcam/ellada/crete/lasithi/spinalonga.html"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block relative overflow-hidden border border-border group"
-        >
-          <img
-            src="https://embed.skylinewebcams.com/img/3952.jpg"
-            alt="Live webcam of Spinalonga — Lasithi, Crete"
-            className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-            loading="lazy"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-          <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
-            <span className="inline-flex items-center gap-2 text-[oklch(0.97_0.012_85)] text-xs uppercase tracking-[0.3em]">
+        <div className="relative overflow-hidden border border-border bg-black">
+          <div className="relative aspect-video w-full">
+            <iframe
+              src="https://embed.skylinewebcams.com/livecam/1488294709.html"
+              title="Live webcam of Spinalonga — Lasithi, Crete"
+              allow="autoplay; fullscreen"
+              allowFullScreen
+              loading="lazy"
+              className="absolute inset-0 w-full h-full border-0"
+            />
+          </div>
+          <div className="pointer-events-none absolute top-4 left-4 z-10">
+            <span className="inline-flex items-center gap-2 bg-black/60 backdrop-blur-sm px-3 py-1.5 text-[oklch(0.97_0.012_85)] text-xs uppercase tracking-[0.3em]">
               <span className="relative flex h-2.5 w-2.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500" />
               </span>
-              {t("liveCam.cta")}
+              {t("liveCam.label")}
             </span>
           </div>
-        </a>
+          <div className="flex items-center justify-between gap-4 px-5 py-4 bg-background border-t border-border">
+            <p className="text-xs text-muted-foreground">
+              Live stream by SkylineWebcams
+            </p>
+            <a
+              href="https://www.skylinewebcams.com/en/webcam/ellada/crete/lasithi/spinalonga.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs uppercase tracking-[0.3em] text-primary hover:text-accent transition-colors"
+            >
+              {t("liveCam.cta")} →
+            </a>
+          </div>
+        </div>
       </section>
 
       {/* Inspiration strip */}
