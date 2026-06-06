@@ -13,19 +13,21 @@ import sv7 from "@/assets/sea/SKI_6803.jpg";
 import sv8 from "@/assets/sea/SKI_6805.jpg";
 import sv9 from "@/assets/sea/SKI_6796.jpg";
 import sv10 from "@/assets/sea/SKI_6810.jpg";
+import { useT } from "@/lib/i18n";
 
-export const Route = createFileRoute("/rooms/sea-view")({
-  component: () => (
+function SeaPage() {
+  const { t } = useT();
+  return (
     <RoomDetail
-      name="Sea View"
-      tagline="Our signature 90 m² apartment — panoramic Spinalonga views, two separate bedrooms, the Cretan Sea at your feet."
+      name={t("room.sea.short")}
+      tagline={t("rd.sea.tag")}
       hero={sv1}
       gallery={[sv1, sv2, sv3, sv4, sv5, sv6, sv7, sv8, sv9, sv10]}
       size="90 m²"
-      capacity="4–5 Guests"
-      view="Cretan Sea & Spinalonga"
-      about="This 4–5 person apartment opens onto a private balcony with a sweeping view of the Cretan Sea and Spinalonga island. With two separate bedrooms, air conditioning, a flat-screen satellite TV, and a kitchenette with electric kettle, hobs, fridge and full kitchenware, it is our most generous space — designed for families and slow, sun-soaked weeks."
-      sleeping="Bedroom 1: 1 Large Double · Bedroom 2: 1 Large Double or 2 Singles"
+      capacity={t("rd.sea.cap")}
+      view={t("rd.sea.view")}
+      about={t("rd.sea.about")}
+      sleeping={t("rd.sea.sleeping")}
       amenities={[
         "Sea View","Spinalonga View","Air Conditioning","Fan","Satellite TV","Flat-screen TV",
         "Cable Channels","Streaming Service","Two Bedrooms","Balcony","Patio","Outdoor Furniture",
@@ -34,12 +36,16 @@ export const Route = createFileRoute("/rooms/sea-view")({
         "Wardrobe","Dressing Room","Tile/Marble Floor","Private Entrance","Free Wi-Fi","Free Parking",
       ]}
       related={[
-        { name: "Studio", to: "/rooms/studio", img: studio, meta: "30 m² · 2 Guests" },
-        { name: "Garden View", to: "/rooms/garden-view", img: garden, meta: "50 m² · 4 Guests" },
-        { name: "Plaka & beyond", to: "/location", img: spinalonga, meta: "Discover the village" },
+        { name: t("room.studio.name"), to: "/rooms/studio", img: studio, meta: t("room.studio.meta") },
+        { name: t("room.garden.short"), to: "/rooms/garden-view", img: garden, meta: t("room.garden.meta") },
+        { name: t("rd.plakaBeyond"), to: "/location", img: spinalonga, meta: t("rd.plakaBeyondMeta") },
       ]}
     />
-  ),
+  );
+}
+
+export const Route = createFileRoute("/rooms/sea-view")({
+  component: SeaPage,
   head: () => ({
     meta: [
       { title: "Sea View · Athina Villas — Plaka, Crete" },

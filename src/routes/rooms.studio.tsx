@@ -9,19 +9,21 @@ import s3 from "@/assets/studio/SKI_6888.jpg";
 import s4 from "@/assets/studio/SKI_6893.jpg";
 import s5 from "@/assets/studio/SKI_6898.jpg";
 import s6 from "@/assets/studio/SKI_6899.jpg";
+import { useT } from "@/lib/i18n";
 
-export const Route = createFileRoute("/rooms/studio")({
-  component: () => (
+function StudioPage() {
+  const { t } = useT();
+  return (
     <RoomDetail
-      name="Studio"
-      tagline="An intimate retreat for two, with a private balcony and a glimpse of the Cretan coastline."
+      name={t("room.studio.name")}
+      tagline={t("rd.studio.tag")}
       hero={s1}
       gallery={[s1, s2, s3, s4, s5, s6]}
       size="30 m²"
-      capacity="2 Guests"
-      view="Sea / Balcony"
-      about="This 2-person apartment opens onto a private balcony, with some units offering a patio or sea view. It is finished with air conditioning and a ceiling fan, satellite flat-screen TV, and a kitchenette equipped with a kettle, fridge, electric hobs, coffee maker and full kitchenware."
-      sleeping="1 Double Bed"
+      capacity={t("rd.studio.cap")}
+      view={t("rd.studio.view")}
+      about={t("rd.studio.about")}
+      sleeping={t("rd.studio.sleeping")}
       amenities={[
         "Air Conditioning","Fan","Satellite TV","Flat-screen TV","Cable Channels","Streaming Service",
         "Kitchenette","Refrigerator","Stovetop","Kitchenware","Coffee Maker","Dining Table",
@@ -30,12 +32,16 @@ export const Route = createFileRoute("/rooms/studio")({
         "Socket Near Bed","Clothes Rack","Linen","Extra Long Beds","Cleaning Products","Children's High Chair",
       ]}
       related={[
-        { name: "Garden View", to: "/rooms/garden-view", img: garden, meta: "50 m² · 4 Guests" },
-        { name: "Sea View", to: "/rooms/sea-view", img: sea, meta: "90 m² · 4–5 Guests" },
-        { name: "Plaka & beyond", to: "/location", img: breakfast, meta: "Discover the village" },
+        { name: t("room.garden.short"), to: "/rooms/garden-view", img: garden, meta: t("room.garden.meta") },
+        { name: t("room.sea.short"), to: "/rooms/sea-view", img: sea, meta: t("room.sea.meta") },
+        { name: t("rd.plakaBeyond"), to: "/location", img: breakfast, meta: t("rd.plakaBeyondMeta") },
       ]}
     />
-  ),
+  );
+}
+
+export const Route = createFileRoute("/rooms/studio")({
+  component: StudioPage,
   head: () => ({
     meta: [
       { title: "Studio · Athina Villas — Plaka, Crete" },

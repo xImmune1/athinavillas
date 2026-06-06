@@ -1,9 +1,10 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
 import spinalonga from "@/assets/spinalonga.jpg";
 import cafePhoto from "@/assets/cafe/photo_2026-06-03_20-59-48.jpg.asset.json";
 import sea from "@/assets/sea/SKI_6788.jpg";
+import { useT, THtml, type DictKey } from "@/lib/i18n";
 
 export const Route = createFileRoute("/location")({
   component: LocationPage,
@@ -15,25 +16,28 @@ export const Route = createFileRoute("/location")({
   }),
 });
 
-const reasons = [
-  ["Ever-clean beaches", "Pristine pebbled shores and picturesque coves for slow Cretan days."],
-  ["Opposite Spinalonga", "Just 2 km across the bay from the historic island and its Venetian fortress."],
-  ["Minutes from Agios Nikolaos", "20 minutes by car to Crete's most charming harbour town and nightlife."],
-  ["Traditional taverns", "A village of fishermen where the catch of the day arrives at your table."],
-  ["Intimate & authentic", "About 300 residents — unspoiled, neighbourly, and reassuringly quiet."],
-  ["Easy connections", "Frequent buses to Elounda, Agios Nikolaos and across the island."],
+type K = DictKey;
+const reasons: [K, K][] = [
+  ["locp.r1.t","locp.r1.d"],
+  ["locp.r2.t","locp.r2.d"],
+  ["locp.r3.t","locp.r3.d"],
+  ["locp.r4.t","locp.r4.d"],
+  ["locp.r5.t","locp.r5.d"],
+  ["locp.r6.t","locp.r6.d"],
 ];
 
-const distances = [
-  ["100m", "Plaka Beach"],
-  ["30m", "Spinalonga Port"],
-  ["5km", "Elounda"],
-  ["10km", "Agios Nikolaos"],
-  ["13km", "Plaka from Ag. Nikolaos"],
-  ["70km", "Heraklion Airport"],
+const distances: [string, K][] = [
+  ["100μ", "locp.dist.beach"],
+  ["30μ", "locp.dist.port"],
+  ["5χλμ", "locp.dist.elounda"],
+  ["10χλμ", "locp.dist.agios"],
+  ["13χλμ", "locp.dist.plaka"],
+  ["70χλμ", "locp.dist.airport"],
 ];
 
 function LocationPage() {
+  const { t, lang } = useT();
+  const unitsEn = ["100m","30m","5km","10km","13km","70km"];
   return (
     <main className="bg-background">
       <SiteNav tone="light" />
@@ -46,12 +50,12 @@ function LocationPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/25 to-black/60" />
         <div className="relative z-10 h-full flex flex-col justify-end px-6 md:px-16 pb-20 text-[oklch(0.97_0.012_85)]">
-          <p className="text-xs uppercase tracking-[0.4em] mb-5 opacity-90 animate-fadeup">Discover</p>
+          <p className="text-xs uppercase tracking-[0.4em] mb-5 opacity-90 animate-fadeup">{t("locp.discover")}</p>
           <h1 className="font-serif text-6xl md:text-9xl leading-[0.95] font-light animate-fadeup delay-200">
-            Location
+            {t("locp.title")}
           </h1>
           <p className="mt-6 max-w-xl text-lg md:text-xl font-light opacity-90 animate-fadeup delay-400">
-            Plaka, Lassithi — a fishing village on Mirabello Bay, opposite the legendary Spinalonga.
+            {t("locp.hero")}
           </p>
         </div>
       </section>
@@ -60,16 +64,14 @@ function LocationPage() {
       <section className="py-24 md:py-32 px-6 md:px-16 max-w-7xl mx-auto">
         <div className="grid md:grid-cols-12 gap-12">
           <div className="md:col-span-5">
-            <p className="text-xs uppercase tracking-[0.4em] text-accent mb-6">Why Plaka</p>
-            <h2 className="font-serif text-5xl md:text-6xl text-primary leading-[1.05]">
-              Where history, nature & Greek <em>hospitality</em> converge.
-            </h2>
+            <p className="text-xs uppercase tracking-[0.4em] text-accent mb-6">{t("locp.why.kicker")}</p>
+            <THtml k="locp.why.title" as="h2" className="font-serif text-5xl md:text-6xl text-primary leading-[1.05]" />
           </div>
           <div className="md:col-span-7 grid sm:grid-cols-2 gap-x-10 gap-y-10">
-            {reasons.map(([t, d]) => (
-              <div key={t} className="border-t border-border pt-5">
-                <h3 className="font-serif text-2xl text-primary">{t}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{d}</p>
+            {reasons.map(([kt, kd]) => (
+              <div key={kt} className="border-t border-border pt-5">
+                <h3 className="font-serif text-2xl text-primary">{t(kt)}</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{t(kd)}</p>
               </div>
             ))}
           </div>
@@ -79,13 +81,13 @@ function LocationPage() {
       {/* Distances */}
       <section className="bg-primary text-[oklch(0.97_0.012_85)] py-24 md:py-32 px-6 md:px-16">
         <div className="max-w-7xl mx-auto">
-          <p className="text-xs uppercase tracking-[0.4em] text-accent mb-6">Distances</p>
-          <h2 className="font-serif text-4xl md:text-5xl mb-16">Everything, within easy reach.</h2>
+          <p className="text-xs uppercase tracking-[0.4em] text-accent mb-6">{t("locp.dist.kicker")}</p>
+          <h2 className="font-serif text-4xl md:text-5xl mb-16">{t("locp.dist.title")}</h2>
           <dl className="grid grid-cols-2 md:grid-cols-3 gap-y-12 gap-x-10">
-            {distances.map(([n, l]) => (
-              <div key={l}>
-                <dt className="font-serif text-5xl md:text-6xl text-accent">{n}</dt>
-                <dd className="mt-2 text-sm uppercase tracking-[0.25em] opacity-80">{l}</dd>
+            {distances.map(([n, kl], i) => (
+              <div key={kl}>
+                <dt className="font-serif text-5xl md:text-6xl text-accent">{lang === "el" ? n : unitsEn[i]}</dt>
+                <dd className="mt-2 text-sm uppercase tracking-[0.25em] opacity-80">{t(kl)}</dd>
               </div>
             ))}
           </dl>
@@ -96,19 +98,17 @@ function LocationPage() {
       <section className="py-24 md:py-32 px-6 md:px-16 max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
           <div>
-            <p className="text-xs uppercase tracking-[0.4em] text-accent mb-6">Find us</p>
-            <h2 className="font-serif text-5xl md:text-6xl text-primary leading-[1.05]">
-              On the bay of <em>Mirabello</em>.
-            </h2>
+            <p className="text-xs uppercase tracking-[0.4em] text-accent mb-6">{t("find.kicker")}</p>
+            <THtml k="find.title" as="h2" className="font-serif text-5xl md:text-6xl text-primary leading-[1.05]" />
             <p className="mt-8 text-lg leading-relaxed text-muted-foreground max-w-md">
-              Plaka, Lassithi 72053, Crete, Greece. Opposite Spinalonga island, on the road from Elounda toward the cape.
+              {t("locp.find.body")}
             </p>
             <div className="mt-10 space-y-3 text-sm">
-              <p><span className="text-[10px] uppercase tracking-[0.3em] text-accent mr-3">Email</span>{"athina-villas@hotmail.com"}</p>
-              <p><span className="text-[10px] uppercase tracking-[0.3em] text-accent mr-3">Phone</span>{"+30 28410 41342"}</p>
+              <p><span className="text-[10px] uppercase tracking-[0.3em] text-accent mr-3">{t("find.email")}</span>{"athina-villas@hotmail.com"}</p>
+              <p><span className="text-[10px] uppercase tracking-[0.3em] text-accent mr-3">{t("find.phone")}</span>{"+30 28410 41342"}</p>
             </div>
             <a href="https://spinalonga.book-onlinenow.net/" target="_blank" rel="noopener noreferrer" className="inline-block mt-10 bg-primary text-primary-foreground px-10 py-4 text-xs uppercase tracking-[0.3em] hover:bg-accent hover:text-accent-foreground transition">
-              Reserve your stay
+              {t("locp.reserve")}
             </a>
           </div>
           <div className="aspect-square overflow-hidden border border-border">

@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { SiteNav } from "./site-nav";
 import { SiteFooter } from "./site-footer";
 import { RoomGallery } from "./room-gallery";
+import { useT } from "@/lib/i18n";
 
 export interface RoomDetailProps {
   name: string;
@@ -18,6 +19,7 @@ export interface RoomDetailProps {
 }
 
 export function RoomDetail(p: RoomDetailProps) {
+  const { t } = useT();
   return (
     <main className="bg-background">
       <SiteNav tone="light" />
@@ -30,7 +32,7 @@ export function RoomDetail(p: RoomDetailProps) {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/70" />
         <div className="relative z-10 h-full flex flex-col justify-end px-6 md:px-16 pb-20 text-[oklch(0.97_0.012_85)]">
-          <p className="text-xs uppercase tracking-[0.4em] mb-5 opacity-90 animate-fadeup">Accommodation</p>
+          <p className="text-xs uppercase tracking-[0.4em] mb-5 opacity-90 animate-fadeup">{t("rd.kicker")}</p>
           <h1 className="font-serif text-5xl md:text-8xl leading-[0.95] font-light animate-fadeup delay-200">
             {p.name}
           </h1>
@@ -44,9 +46,9 @@ export function RoomDetail(p: RoomDetailProps) {
       <section className="border-b border-border">
         <div className="max-w-7xl mx-auto grid grid-cols-3 divide-x divide-border">
           {[
-            ["Size", p.size],
-            ["Capacity", p.capacity],
-            ["View", p.view],
+            [t("rd.spec.size"), p.size],
+            [t("rd.spec.cap"), p.capacity],
+            [t("rd.spec.view"), p.view],
           ].map(([k, v]) => (
             <div key={k} className="px-6 md:px-12 py-10 text-center">
               <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">{k}</p>
@@ -60,18 +62,18 @@ export function RoomDetail(p: RoomDetailProps) {
       <section className="py-24 md:py-32 px-6 md:px-16 max-w-7xl mx-auto">
         <div className="grid md:grid-cols-12 gap-12 md:gap-20">
           <div className="md:col-span-7">
-            <p className="text-xs uppercase tracking-[0.4em] text-accent mb-6">About this room</p>
+            <p className="text-xs uppercase tracking-[0.4em] text-accent mb-6">{t("rd.about")}</p>
             <h2 className="font-serif text-4xl md:text-5xl leading-[1.1] text-primary mb-8">
-              A quiet corner of Crete, made for you.
+              {t("rd.aboutTitle")}
             </h2>
             <p className="text-base md:text-lg leading-relaxed text-muted-foreground">{p.about}</p>
 
             <div className="grid sm:grid-cols-2 gap-8 mt-12">
               {[
-                ["Sleeping", p.sleeping],
-                ["Bathroom", "Private bathroom with towels provided."],
-                ["Parking", "Free public parking nearby."],
-                ["Smoking", "Non-smoking accommodation."],
+                [t("rd.sleeping"), p.sleeping],
+                [t("rd.bathroom"), t("rd.bathroomV")],
+                [t("rd.parking"), t("rd.parkingV")],
+                [t("rd.smoking"), t("rd.smokingV")],
               ].map(([k, v]) => (
                 <div key={k} className="border-t border-border pt-5">
                   <p className="text-[10px] uppercase tracking-[0.3em] text-accent">{k}</p>
@@ -83,17 +85,17 @@ export function RoomDetail(p: RoomDetailProps) {
 
           <aside className="md:col-span-5">
             <div className="md:sticky md:top-28 border border-border bg-card p-8">
-              <p className="text-[10px] uppercase tracking-[0.3em] text-accent">Check availability</p>
+              <p className="text-[10px] uppercase tracking-[0.3em] text-accent">{t("rd.checkAvail")}</p>
               <p className="font-serif text-3xl text-primary mt-3 leading-snug">
-                Reserve <em>{p.name}</em>
+                {t("rd.reserve")} <em>{p.name}</em>
               </p>
               <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-                Submit your dates and we'll confirm availability within 24 hours.
+                {t("rd.submitDates")}
               </p>
               <a href="https://spinalonga.book-onlinenow.net/" target="_blank" rel="noopener noreferrer"
                 className="mt-6 block text-center bg-primary text-primary-foreground px-8 py-4 text-xs uppercase tracking-[0.3em] hover:bg-accent hover:text-accent-foreground transition"
               >
-                Book this room
+                {t("rd.bookThis")}
               </a>
               <p className="mt-4 text-[11px] text-muted-foreground text-center">
                 stay@athinavillas.gr · +30 28410 00000
@@ -105,15 +107,15 @@ export function RoomDetail(p: RoomDetailProps) {
 
       {/* Gallery */}
       <section className="px-6 md:px-16 pb-24 md:pb-32 max-w-7xl mx-auto">
-        <p className="text-xs uppercase tracking-[0.4em] text-accent mb-6">Gallery</p>
+        <p className="text-xs uppercase tracking-[0.4em] text-accent mb-6">{t("rd.gallery")}</p>
         <RoomGallery images={p.gallery} roomName={p.name} />
       </section>
 
       {/* Amenities */}
       <section className="bg-primary text-[oklch(0.97_0.012_85)] py-24 md:py-32 px-6 md:px-16">
         <div className="max-w-7xl mx-auto">
-          <p className="text-xs uppercase tracking-[0.4em] text-accent mb-6">Amenities & Facilities</p>
-          <h2 className="font-serif text-4xl md:text-5xl mb-12">Everything, considered.</h2>
+          <p className="text-xs uppercase tracking-[0.4em] text-accent mb-6">{t("rd.amenitiesTitle")}</p>
+          <h2 className="font-serif text-4xl md:text-5xl mb-12">{t("rd.amenitiesH")}</h2>
           <ul className="grid grid-cols-2 md:grid-cols-4 gap-y-4 gap-x-8 text-sm opacity-90">
             {p.amenities.map((a) => (
               <li key={a} className="flex items-center gap-3 border-b border-[oklch(0.97_0.012_85/0.12)] pb-3">
@@ -127,9 +129,9 @@ export function RoomDetail(p: RoomDetailProps) {
       {/* Related */}
       <section className="py-24 md:py-32 px-6 md:px-16 max-w-7xl mx-auto">
         <div className="flex items-end justify-between mb-12">
-          <h2 className="font-serif text-4xl md:text-5xl text-primary">Other retreats</h2>
+          <h2 className="font-serif text-4xl md:text-5xl text-primary">{t("rd.other")}</h2>
           <a href="https://spinalonga.book-onlinenow.net/" target="_blank" rel="noopener noreferrer" className="hidden md:inline text-xs uppercase tracking-[0.3em] text-accent border-b border-accent pb-1">
-            Book now →
+            {t("rd.bookNow")}
           </a>
         </div>
         <div className="grid md:grid-cols-3 gap-6 md:gap-10">
