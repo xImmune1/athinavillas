@@ -122,6 +122,44 @@ function LocationPage() {
         </div>
       </section>
 
+      {/* Live webcam */}
+      <section className="py-24 md:py-32 px-6 md:px-16 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-12 gap-12 md:gap-16 items-end mb-12 md:mb-16">
+          <div className="md:col-span-5">
+            <p className="text-xs uppercase tracking-[0.4em] text-accent mb-6">{t("liveCam.label")}</p>
+            <THtml k="liveCam.title" as="h2" className="font-serif text-5xl md:text-6xl text-primary leading-[1.05]" />
+          </div>
+          <div className="md:col-span-7">
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+              {t("liveCam.body")}
+            </p>
+          </div>
+        </div>
+        <a
+          href="https://www.skylinewebcams.com/en/webcam/ellada/crete/lasithi/spinalonga.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block relative overflow-hidden border border-border group"
+        >
+          <img
+            src="https://embed.skylinewebcams.com/img/3952.jpg"
+            alt="Live webcam of Spinalonga — Lasithi, Crete"
+            className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+          <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
+            <span className="inline-flex items-center gap-2 text-[oklch(0.97_0.012_85)] text-xs uppercase tracking-[0.3em]">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500" />
+              </span>
+              {t("liveCam.cta")}
+            </span>
+          </div>
+        </a>
+      </section>
+
       {/* Inspiration strip */}
       <section className="grid md:grid-cols-2">
         <div className="aspect-[4/3] md:aspect-auto md:h-[60vh] overflow-hidden">

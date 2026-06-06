@@ -160,6 +160,12 @@ export const dict: Dict = {
     el: "Τα πρωινά ξεκινούν λίγα βήματα μακριά, στο δικό μας café-snack <em>The Island</em> — όπου σερβίρεται φρέσκο πρωινό κάθε μέρα κάτω από την πέργκολα: ομελέτες, σπιτικές πίτες, club sandwiches, φρεσκοστυμμένοι χυμοί, smoothies και αυθεντικός ελληνικός καφές. Μείνετε για μεσημεριανό, ένα παγωτό το απόγευμα ή ένα ποτό στο ηλιοβασίλεμα.",
   },
 
+  "liveCam.label": { en: "Live view", el: "Ζωντανή εικόνα" },
+  "liveCam.title": { en: "Spinalonga, <em>live</em>.", el: "Σπιναλόγκα, <em>ζωντανά</em>." },
+  "liveCam.body": { en: "Watch the bay in real time — boats coming and going, the changing light on the fortress, and the sea as it looks right now.", el: "Παρακολουθήστε τον κόλπο σε πραγματικό χρόνο — τα καραβάκια να έρχονται και να φεύγουν, το φως που αλλάζει πάνω στο κάστρο, και τη θάλασσα όπως είναι αυτή τη στιγμή." },
+  "liveCam.cta": { en: "View live webcam", el: "Δείτε ζωντανά" },
+  "home.liveCam": { en: "View Live Location", el: "Ζωντανή Θέα" },
+
   // ---------- Facilities page ----------
   "fac.kicker": { en: "Facilities", el: "Παροχές" },
   "fac.title": { en: "Everything, <em>considered</em>.", el: "Όλα, με <em>φροντίδα</em>." },
