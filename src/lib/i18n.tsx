@@ -476,11 +476,11 @@ export function THtml({
   className,
 }: {
   k: keyof typeof dict;
-  as?: keyof JSX.IntrinsicElements;
+  as?: any;
   className?: string;
 }) {
   const { t } = useT();
-  const Tag = As as any;
+  const Tag: any = As;
   return <Tag className={className} dangerouslySetInnerHTML={{ __html: t(k) }} />;
 }
 
