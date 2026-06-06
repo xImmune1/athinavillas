@@ -1,26 +1,27 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
+import { useT, LanguageToggle } from "@/lib/i18n";
 
 type Tone = "light" | "dark";
 
-const rooms = [
-  { label: "Studio", meta: "30 m² · 2 Guests", to: "/rooms/studio" as const },
-  { label: "Apartment with Garden View", meta: "50 m² · 4 Guests", to: "/rooms/garden-view" as const },
-  { label: "Apartment with Sea View", meta: "90 m² · 4–5 Guests", to: "/rooms/sea-view" as const },
-];
-
-const links = [
-  { label: "Home", to: "/" as const },
-  { label: "Facilities", to: "/facilities" as const },
-  { label: "Location", to: "/location" as const },
-  { label: "Book", to: "/book" as const },
-];
-
 export function SiteNav({ tone = "dark" }: { tone?: Tone }) {
+  const { t } = useT();
   const [scrolled, setScrolled] = useState(false);
   const [openRooms, setOpenRooms] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const rooms = [
+    { label: t("room.studio.name"), meta: t("room.studio.meta"), to: "/rooms/studio" as const },
+    { label: t("room.garden.name"), meta: t("room.garden.meta"), to: "/rooms/garden-view" as const },
+    { label: t("room.sea.name"), meta: t("room.sea.meta"), to: "/rooms/sea-view" as const },
+  ];
+
+  const links = [
+    { label: t("nav.facilities"), to: "/facilities" as const },
+    { label: t("nav.location"), to: "/location" as const },
+    { label: t("nav.book"), to: "/book" as const },
+  ];
 
   useEffect(() => {
     const on = () => setScrolled(window.scrollY > 20);
@@ -62,7 +63,7 @@ export function SiteNav({ tone = "dark" }: { tone?: Tone }) {
             activeProps={{ className: "opacity-100 text-accent" }}
             activeOptions={{ exact: true }}
           >
-            Home
+            {t("nav.home")}
           </Link>
         </li>
 
@@ -75,7 +76,7 @@ export function SiteNav({ tone = "dark" }: { tone?: Tone }) {
             aria-haspopup="menu"
             aria-expanded={openRooms}
           >
-            Rooms
+            {t("nav.rooms")}
             <span className={`text-[10px] transition-transform ${openRooms ? "rotate-180" : ""}`}>▾</span>
           </button>
 
@@ -87,7 +88,7 @@ export function SiteNav({ tone = "dark" }: { tone?: Tone }) {
             role="menu"
           >
             <div className="bg-background border border-border shadow-xl">
-              <p className="text-[10px] uppercase tracking-[0.3em] text-accent px-5 pt-5 pb-2">Accommodation</p>
+              <p className="text-[10px] uppercase tracking-[0.3em] text-accent px-5 pt-5 pb-2">{t("nav.accommodation")}</p>
               <ul className="pb-2">
                 {rooms.map((r) => (
                   <li key={r.to}>
@@ -111,13 +112,13 @@ export function SiteNav({ tone = "dark" }: { tone?: Tone }) {
                 onClick={() => setOpenRooms(false)}
                 className="block text-center text-[10px] uppercase tracking-[0.3em] bg-primary text-primary-foreground py-3 hover:bg-accent hover:text-accent-foreground transition"
               >
-                Reserve a room
+                {t("nav.reserveRoom")}
               </a>
             </div>
           </div>
         </li>
 
-        {links.slice(1).map((l) => (
+        {links.map((l) => (
           <li key={l.to}>
             <Link
               to={l.to}
@@ -129,6 +130,10 @@ export function SiteNav({ tone = "dark" }: { tone?: Tone }) {
             </Link>
           </li>
         ))}
+
+        <li className="pl-4 border-l border-current/20">
+          <LanguageToggle tone={solid ? "dark" : "light"} />
+        </li>
       </ul>
 
       <a href="https://spinalonga.book-onlinenow.net/" target="_blank" rel="noopener noreferrer"
@@ -139,14 +144,14 @@ export function SiteNav({ tone = "dark" }: { tone?: Tone }) {
             : "border-[oklch(0.97_0.012_85/0.5)] hover:bg-[oklch(0.97_0.012_85)] hover:text-primary",
         ].join(" ")}
       >
-        Reserve
+        {t("nav.reserve")}
       </a>
 
       {/* Mobile toggle */}
       <button
         onClick={() => setMobileOpen((v) => !v)}
         className="md:hidden flex flex-col gap-1.5 p-2 -mr-2"
-        aria-label="Toggle menu"
+        aria-label={t("nav.toggleMenu")}
       >
         <span className={`block w-6 h-px bg-current transition-transform ${mobileOpen ? "rotate-45 translate-y-[6px]" : ""}`} />
         <span className={`block w-6 h-px bg-current transition-opacity ${mobileOpen ? "opacity-0" : ""}`} />
@@ -161,20 +166,23 @@ export function SiteNav({ tone = "dark" }: { tone?: Tone }) {
         ].join(" ")}
       >
         <div className="px-6 py-6 space-y-1">
-          <Link to="/" onClick={() => setMobileOpen(false)} className="block py-3 text-sm uppercase tracking-[0.25em] border-b border-border">Home</Link>
+          <Link to="/" onClick={() => setMobileOpen(false)} className="block py-3 text-sm uppercase tracking-[0.25em] border-b border-border">{t("nav.home")}</Link>
           <div className="py-3 border-b border-border">
-            <p className="text-[10px] uppercase tracking-[0.3em] text-accent mb-3">Rooms</p>
+            <p className="text-[10px] uppercase tracking-[0.3em] text-accent mb-3">{t("nav.rooms")}</p>
             {rooms.map((r) => (
               <Link key={r.to} to={r.to} onClick={() => setMobileOpen(false)} className="block py-2 pl-3 font-serif text-lg">
                 {r.label} <span className="text-xs text-muted-foreground">· {r.meta}</span>
               </Link>
             ))}
           </div>
-          {links.slice(1).map((l) => (
+          {links.map((l) => (
             <Link key={l.to} to={l.to} onClick={() => setMobileOpen(false)} className="block py-3 text-sm uppercase tracking-[0.25em] border-b border-border">
               {l.label}
             </Link>
           ))}
+          <div className="pt-4">
+            <LanguageToggle tone="dark" />
+          </div>
         </div>
       </div>
     </nav>
