@@ -147,16 +147,19 @@ export function SiteNav({ tone = "dark" }: { tone?: Tone }) {
         {t("nav.reserve")}
       </a>
 
-      {/* Mobile toggle */}
-      <button
-        onClick={() => setMobileOpen((v) => !v)}
-        className="md:hidden flex flex-col gap-1.5 p-2 -mr-2"
-        aria-label={t("nav.toggleMenu")}
-      >
-        <span className={`block w-6 h-px bg-current transition-transform ${mobileOpen ? "rotate-45 translate-y-[6px]" : ""}`} />
-        <span className={`block w-6 h-px bg-current transition-opacity ${mobileOpen ? "opacity-0" : ""}`} />
-        <span className={`block w-6 h-px bg-current transition-transform ${mobileOpen ? "-rotate-45 -translate-y-[6px]" : ""}`} />
-      </button>
+      {/* Mobile actions */}
+      <div className="md:hidden flex items-center gap-4">
+        <LanguageToggle tone={solid ? "dark" : "light"} />
+        <button
+          onClick={() => setMobileOpen((v) => !v)}
+          className="flex flex-col gap-1.5 p-2 -mr-2"
+          aria-label={t("nav.toggleMenu")}
+        >
+          <span className={`block w-6 h-px bg-current transition-transform ${mobileOpen ? "rotate-45 translate-y-[6px]" : ""}`} />
+          <span className={`block w-6 h-px bg-current transition-opacity ${mobileOpen ? "opacity-0" : ""}`} />
+          <span className={`block w-6 h-px bg-current transition-transform ${mobileOpen ? "-rotate-45 -translate-y-[6px]" : ""}`} />
+        </button>
+      </div>
 
       {/* Mobile menu */}
       <div
@@ -180,9 +183,6 @@ export function SiteNav({ tone = "dark" }: { tone?: Tone }) {
               {l.label}
             </Link>
           ))}
-          <div className="pt-4">
-            <LanguageToggle tone="dark" />
-          </div>
         </div>
       </div>
     </nav>
