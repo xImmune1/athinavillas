@@ -501,3 +501,5 @@ export function LanguageToggle({ tone = "auto" }: { tone?: "auto" | "light" | "d
     </div>
   );
 }
+
+export type DictKey = keyof typeof dict;
