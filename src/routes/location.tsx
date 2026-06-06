@@ -155,3 +155,46 @@ function LocationPage() {
     </main>
   );
 }
+
+function LiveCamEmbed({ cta, label }: { cta: string; label: string }) {
+  const base = "https://embed.skylinewebcams.com/img/3952.jpg";
+  const [src, setSrc] = useState(`${base}?t=${Date.now()}`);
+  useEffect(() => {
+    const id = setInterval(() => setSrc(`${base}?t=${Date.now()}`), 15000);
+    return () => clearInterval(id);
+  }, []);
+  return (
+    <div className="relative overflow-hidden border border-border bg-black">
+      <div className="relative aspect-video w-full">
+        <img
+          src={src}
+          alt="Live view of Spinalonga from Plaka — Lasithi, Crete"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="pointer-events-none absolute top-4 left-4">
+          <span className="inline-flex items-center gap-2 bg-black/60 backdrop-blur-sm px-3 py-1.5 text-[oklch(0.97_0.012_85)] text-xs uppercase tracking-[0.3em]">
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500" />
+            </span>
+            {label}
+          </span>
+        </div>
+      </div>
+      <div className="flex items-center justify-between gap-4 px-5 py-4 bg-background border-t border-border">
+        <p className="text-xs text-muted-foreground">
+          Auto-refreshing view · powered by SkylineWebcams
+        </p>
+        <a
+          href="https://www.skylinewebcams.com/en/webcam/ellada/crete/lasithi/spinalonga.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-xs uppercase tracking-[0.3em] text-primary hover:text-accent transition-colors"
+        >
+          {cta} →
+        </a>
+      </div>
+    </div>
+  );
+}
+
