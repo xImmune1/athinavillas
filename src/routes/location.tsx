@@ -1,10 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
 import spinalonga from "@/assets/spinalonga.jpg";
 import cafePhoto from "@/assets/cafe/photo_2026-06-03_20-59-48.jpg.asset.json";
 import sea from "@/assets/sea/SKI_6788.jpg";
 import { useT, THtml, type DictKey } from "@/lib/i18n";
+
 
 export const Route = createFileRoute("/location")({
   component: LocationPage,
@@ -135,29 +137,7 @@ function LocationPage() {
             </p>
           </div>
         </div>
-        <a
-          href="https://www.skylinewebcams.com/en/webcam/ellada/crete/lasithi/spinalonga.html"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block relative overflow-hidden border border-border group"
-        >
-          <img
-            src="https://embed.skylinewebcams.com/img/3952.jpg"
-            alt="Live webcam of Spinalonga — Lasithi, Crete"
-            className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-            loading="lazy"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-          <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
-            <span className="inline-flex items-center gap-2 text-[oklch(0.97_0.012_85)] text-xs uppercase tracking-[0.3em]">
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500" />
-              </span>
-              {t("liveCam.cta")}
-            </span>
-          </div>
-        </a>
+        <LiveCamEmbed cta={t("liveCam.cta")} label={t("liveCam.label")} />
       </section>
 
       {/* Inspiration strip */}
@@ -167,6 +147,7 @@ function LocationPage() {
         </div>
         <div className="aspect-[4/3] md:aspect-auto md:h-[60vh] overflow-hidden">
           <img src={sea} alt="Sea view from Athina Villas" className="w-full h-full object-cover" />
+
         </div>
       </section>
 
@@ -174,3 +155,46 @@ function LocationPage() {
     </main>
   );
 }
+
+function LiveCamEmbed({ cta, label }: { cta: string; label: string }) {
+  const base = "https://embed.skylinewebcams.com/img/3952.jpg";
+  const [src, setSrc] = useState(`${base}?t=${Date.now()}`);
+  useEffect(() => {
+    const id = setInterval(() => setSrc(`${base}?t=${Date.now()}`), 15000);
+    return () => clearInterval(id);
+  }, []);
+  return (
+    <div className="relative overflow-hidden border border-border bg-black">
+      <div className="relative aspect-video w-full">
+        <img
+          src={src}
+          alt="Live view of Spinalonga from Plaka — Lasithi, Crete"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="pointer-events-none absolute top-4 left-4">
+          <span className="inline-flex items-center gap-2 bg-black/60 backdrop-blur-sm px-3 py-1.5 text-[oklch(0.97_0.012_85)] text-xs uppercase tracking-[0.3em]">
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500" />
+            </span>
+            {label}
+          </span>
+        </div>
+      </div>
+      <div className="flex items-center justify-between gap-4 px-5 py-4 bg-background border-t border-border">
+        <p className="text-xs text-muted-foreground">
+          Auto-refreshing view · powered by SkylineWebcams
+        </p>
+        <a
+          href="https://www.skylinewebcams.com/en/webcam/ellada/crete/lasithi/spinalonga.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-xs uppercase tracking-[0.3em] text-primary hover:text-accent transition-colors"
+        >
+          {cta} →
+        </a>
+      </div>
+    </div>
+  );
+}
+
