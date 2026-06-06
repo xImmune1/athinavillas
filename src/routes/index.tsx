@@ -8,10 +8,11 @@ import gardenImg from "../assets/garden/SKI_6829.jpg";
 import seaImg from "../assets/sea/SKI_6785.jpg";
 import spinalongaImg from "../assets/spinalonga.jpg";
 import plakaImg from "../assets/plaka.jpg";
-import cafeFront from "@/assets/cafe/photo_2026-06-03_20-59-46.jpg.asset.json";
+import cafeFront from "@/assets/cafe/cafe-wide.jpg.asset.json";
 import cafeTerrace from "@/assets/cafe/photo_2026-06-03_20-59-48.jpg.asset.json";
 import cafeStreet from "@/assets/cafe/photo_2026-06-03_20-59-49.jpg.asset.json";
 import cafeInside from "@/assets/cafe/photo_2026-06-03_20-59-51.jpg.asset.json";
+import cafeBreakfast from "@/assets/cafe/breakfast-platter.jpg.asset.json";
 import { useT, THtml, type DictKey } from "@/lib/i18n";
 
 export const Route = createFileRoute("/")({
@@ -338,7 +339,8 @@ function CTA() {
 
 function CafeCarousel() {
   const images = [
-    { src: cafeFront.url, alt: "The Island café-snack — entrance and menu" },
+    { src: cafeFront.url, alt: "The Island café-snack — full view of the building and terrace" },
+    { src: cafeBreakfast.url, alt: "Traditional Cretan breakfast platter with cheese, olives, tomato, cucumber and rusks" },
     { src: cafeTerrace.url, alt: "Shaded pergola terrace at The Island café" },
     { src: cafeInside.url, alt: "Inside The Island café — bar and counter" },
     { src: cafeStreet.url, alt: "Plaka street view from The Island café" },

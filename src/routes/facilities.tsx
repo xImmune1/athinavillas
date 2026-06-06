@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
-import cafeFront from "@/assets/cafe/photo_2026-06-03_20-59-46.jpg.asset.json";
+import cafeBreakfast from "@/assets/cafe/breakfast-platter.jpg.asset.json";
 import spinalongaImg from "@/assets/spinalonga.jpg";
 import gardenImg from "@/assets/garden/SKI_6829.jpg";
 import { useT, THtml, type DictKey } from "@/lib/i18n";
@@ -45,7 +45,7 @@ function FacilitiesPage() {
   const { t } = useT();
 
   const highlights = [
-    { tag: t("fac.hl1.tag"), title: t("fac.hl1.title"), body: t("fac.hl1.body"), img: cafeFront.url },
+    { tag: t("fac.hl1.tag"), title: t("fac.hl1.title"), body: t("fac.hl1.body"), img: cafeBreakfast.url },
     { tag: t("fac.hl2.tag"), title: t("fac.hl2.title"), body: t("fac.hl2.body"), img: spinalongaImg },
     { tag: t("fac.hl3.tag"), title: t("fac.hl3.title"), body: t("fac.hl3.body"), img: gardenImg },
   ];
