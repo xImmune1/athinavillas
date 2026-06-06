@@ -1,10 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
 import spinalonga from "@/assets/spinalonga.jpg";
 import cafePhoto from "@/assets/cafe/photo_2026-06-03_20-59-48.jpg.asset.json";
 import sea from "@/assets/sea/SKI_6788.jpg";
 import { useT, THtml, type DictKey } from "@/lib/i18n";
+
 
 export const Route = createFileRoute("/location")({
   component: LocationPage,
